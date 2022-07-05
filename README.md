@@ -794,3 +794,6 @@ sudo apt-get install libpq-dev
 ```
 
 [Fórum com a resolução do problema](https://stackoverflow.com/questions/49674564/package-configuration-for-libxml2-is-not-found)
+
+
+
