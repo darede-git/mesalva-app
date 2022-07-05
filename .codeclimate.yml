@@ -1,0 +1,38 @@
+engines:
+  brakeman:
+    enabled: true
+    exclude_paths:
+      - app/models/concerns/study_plan_user_accessible_node_modules_query.rb
+  bundler-audit:
+    enabled: true
+  duplication:
+    enabled: true
+    config:
+      languages:
+      - ruby
+    exclude_paths:
+      - spec/lib/me_salva/event/permalink/
+      - spec/support/event/user/
+  fixme:
+    enabled: true
+  rubocop:
+    enabled: true
+ratings:
+  paths:
+  - Gemfile.lock
+  - "**.rb"
+  - "**.erb"
+  - "**.rb"
+exclude_paths:
+- config/
+- db/
+- bin/
+- "Gemfile"
+- "Rakefile"
+- "**.md"
+- "**.ico"
+- "**.apib"
+- "**.ru"
+- "**.rake"
+- "**.json"
+- "**.png"
