@@ -1,0 +1,15 @@
+[
+  {
+    "name": "Nome do aluno",
+    "platform_slug": "cps",
+    "role": "student",
+    "send_mail": true,
+    "email": "email.do.aluno@etec.sp.gov.br",
+    "password": "senha",
+    "package_ids": 2994,
+    "options": {
+      "cpf": "cpf-do-aluno",
+      "sede": "infos adicionais"
+    }
+  }
+]

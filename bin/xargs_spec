@@ -1,0 +1,10 @@
+#!/bin/bash
+
+CURRENT_OS="$(uname -s)"
+IS_OSX="Darwin"
+
+if [ "$CURRENT_OS" = "$IS_OSX" ]; then
+    xargs rubocop
+else
+    xargs --no-run-if-empty rubocop
+fi

@@ -1,0 +1,43 @@
+<div style="width: 100%; max-width: 600px; margin: 0 auto; font-family: Arial; font-size: 16px; font-weight: 500; color: #5e5e5e;">
+  <div style="margin: 15px;">
+    <div>
+      <img class="center" src="<%= t('mailer.checkout.logo_email_mesalva') %>" alt="Logotipo do Me Salva!">
+    </div>
+    <div>
+      <p><%= @first_name ? "E aí, #{@first_name}" : "" %></p>
+
+      <p>Acesso liberado ao Me Salva para o ENEM</p>
+      <p>A sua escola faz parte de uma parceria com o Me Salva! para turbinar seu preparo para o
+        ENEM e para aproveitar <b>gratuitamente</b> TODAS as aulas gravadas, plano de estudos personalizado,
+        resumos em PDF, banco de provas, banco de questões por assunto e ainda mais recursos*,
+        é só você <b>escolher arrasar no ENEM e finalizar seu cadastro clicando no botão abaixo</b> 👇
+      </p>
+    </div>
+    <div style="display: table; margin: 0 auto;">
+      <a href="https://www.mesalva.com/bolsas/rs?token=<%= @token %>" style="text-decoration: none; border-radius: 4px; background-color: #ed4343; color: #ffffff; border: none; padding: 14px; font-size: 16px; display: inline-block; font-family : Arial; margin: 50px;">QUERO
+        ARRASAR NO ENEM</a>
+    </div>
+    <div>
+      <p> 📝Recado: para ter acesso a todos os recursos disponíveis pela parceria
+        com sua escola, cadastre o mesmo endereço de e-mail em que você recebeu essa notificação, beleza? 😉
+      </p>
+      <p> Em caso de dúvidas ou dificuldades, 🎥
+        <a href="https://www.youtube.com/watch?v=_2W_eEoylrQ&feature=emb_imp_woyt">assista a este vídeo</a>.
+      <p>
+        Precisa de ajuda? Entre em contato com a nossa equipe pelo chat disponível em
+        <a href="https://ajuda.mesalva.com">ajuda.mesalva.com</a>,
+        de segunda a sexta-feira das 9h às 17h, com retorno em até 1 dia útil.
+      </p>
+      <p>
+        Abraço virtual e ótimos estudos!
+      </p>
+      <p>Equipe do Me Salva!</p>
+    </div>
+    <p>
+      <i>*a parceria inclui acesso a todos os recursos online do
+        <a href="https://mesalva.com">mesalva.com</a>, com exceção da correção de redação, aulas ao vivo,
+        mentorias e encontros com psicólogos.
+      </i>
+    </p>
+  </div>
+</div>

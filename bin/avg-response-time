@@ -1,0 +1,26 @@
+#!/bin/sh
+set -e
+
+if ! lsof -wni tcp:3000 > /dev/null
+then
+  echo 'Preparing environment for requests tests'
+  bundle exec rails s > /dev/null &
+  sleep 5
+fi
+
+if [[ "$*" == "user_session" ]]
+then
+  ab -p bin/data/user_session.json -T application/json -c 100 -n 300 http://localhost:3000/user/sign_in
+fi
+
+# Comment before_action :client_validation on application controller
+# before using these tests
+if [[ "$*" == "education_segments" ]]
+then
+  ab -T application/json -c 10 -n 1000 http://localhost:3000/education_segments
+fi
+
+if [[ "$*" == "enem" ]]
+then
+  ab -T application/json -c 10 -n 1000 http://localhost:3000/permalinks/enem-e-vestibulares
+fi

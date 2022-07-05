@@ -1,0 +1,11 @@
+Description:
+    Generates a new Me Salva! customized factory at spec/factories.
+    Pass the factory name as an argument, either CamelCased or snake_cased.
+    It is possible to pass the attributes arguments as well.
+
+Examples:
+    `bin/rails generate ms_factory Awesome`
+    `bin/rails generate ms_factory Awesome attribute1:string attribute2:integer attribute3:references`
+
+    creates a Me Salva! customized awesome factory:
+        spec/factories/awesome_factory.rb

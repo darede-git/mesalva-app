@@ -1,0 +1,78 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.pagar.me/1/transactions
+    body:
+      encoding: UTF-8
+      string: '{"amount":1000,"postback_url":"http://085af585.ngrok.io","customer":{"external_id":"user76@mesalva.com","type":"individual","country":"br","name":"Me
+        Salva!","documents":[{"type":"cpf","number":"98435565009"}],"email":"email@teste.com","birthday":"1969-12-31","phone_numbers":["+5551991991919"]},"metadata":{"user_id":79,"nome":"Me
+        Salva!","logradouro":"Rua Padre Chagas","numero":79,"complemento":"302","bairro":"Moinhos
+        de Vento","cidade":"Porto Alegre","estado":"RS","cep":"91920-000","produto-comprado":"Enem
+        Semestral54","tempo-de-duração-do-produto":6,"order-id":28,"data-da-compra":"2021-12-21
+        23:02:27 -0300"},"payment_method":"credit_card","installments":1,"async":true,"card_id":"card_ckljewknk0iyn0i9t63o9h49m","status":"local","card_expiration_date":""}'
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - pagarme-ruby/2.3.0
+      Content-Type:
+      - application/json; charset=utf8
+      Content-Length:
+      - '767'
+      Authorization:
+      - Basic YWtfdGVzdF83UU1XMjk1WmZ1N1RaSGtjMnRCVzhTaFhBZ3pCNmk6eA==
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 22 Dec 2021 02:02:51 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Credentials:
+      - 'true'
+      X-Pagarme-Version:
+      - '2019-09-01'
+      Vary:
+      - X-HTTP-Method-Override
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Content-Type, Authorization, X-Requested-With, X-HTTP-Method-Override
+      X-Response-Time:
+      - 130.937ms
+      Access-Control-Allow-Methods:
+      - GET,PUT,POST,DELETE
+      Charset:
+      - utf-8
+      Etag:
+      - W/"964-Qgd0eoEQ8KOF4OS6bpyebwCm8qc"
+      X-Request-Id:
+      - b8238e4f-95dc-4fc7-8e45-326e74512dd6
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Cf-Cache-Status:
+      - DYNAMIC
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 6c15c5320af351e0-GRU
+      Content-Encoding:
+      - gzip
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA4xWzY7bNhB+FXeulR1KtuyVTgnaLdBDiyC77SFFINDk2OKaIpUh6d1tsE/TQx8kL1ZQf9YmGzSGAUszw+HM528+8hPY/R0KDyV44sZx4ZU1kIDz3AcHJbRkBTqnzBESIDwEhxUhd9ZAaYLWY+hkBC4+BkVIkEyPFaFrrXFYCStxXDh5DW++Nio5mYKvLam/eaztWQZnD76S6ASp1lsazf6y1rgwPkrusRKE3KOEEjKWpcs0W2bZLctKlpV5umK7/D0MkaGV/x/JGxuMhzJljF0KRVmNDpZAy9Wz9wiikc9jlHGea92g8Q7KNIHYQZpvtldFkSYgrOvjBCdZ1VbLCTX4zVJbY3CLX5Sr94EMwhCnufOVVEcVc0KapunoOSiauzbp3LknbmLbZ+X4aGuVqZoZ8J2x4UfnSbVYHbjWey5OUB64dpiAODdxzfTeWudjQBVIQwm192356hW7yvkhv8pX5kj2tFIWIlqPEYWqQV/bWIYglMpXcceumtYHwosbhW0aJBG75sarA/EgKycsTcXurUZv+62fWfac5mwarPjQKuq5FhkwegkPGFldAm9VdcJHSEC1EdhdsUrTdJUytso3cXbCvmdkTHGhYltbc6G5lITOTXgG520Ts3+6TORk7OmwK9a7NcsSwAePZLjuckNwSLvt6wYd12e+EraBBPxjG7mhjFRnJQPXEbrINnqEEvYxpbQidEib0Oxxmp3JPKQQ7QESGLmGi5u4yw+QADZcxf+y+33t0XkcNu8aHdI6KP+CH/M8T4ui+6YFfIhQk6m4n5BX5GvJY21psS3isK0jH49o5Ky07xjg9e79rLe4+wzQ0TwAGt8rcXo43uf2zNlGKlYX/rFtdsgO/ILiAMEAExRXm3Web3PGCnj68BSr1zrq4yhKtWrb2bvy2MRCPvRj8/wv7lndVdPNlDjpO7w/mRNTj4apwm/Xtqg3RQMv98+yZba5TbMy25abbLVj3xSwLyKLHqkvhv07pOVb2vGy2kyc++P3X2+vf17c3L65vb7p0pgjUkvKdDjc5fv7jVCWxc9dtr57yPWWiY+QwJnriI+ngJH7XwwnpGm2hqcEXKuVryhonKaqQc8l9zxCvueKyHZNKVNbt5C4+BONj5ojMM5xkRYZWzLGokVJHoUB3lrydvFG45E6XbVNq7Hp1pWwZlkPNl9Kvow+4nNipotsHYmZ7RZLtu4So/NcxrXvIgjaHolLG7rC3gW+eMsl4eKnmh+5i5yzX42dCQ3G8F2RgCWJtIzgZFdJPKll8Haoo9vk2mCzuMEGnSeuO3Hy2LR2KXEpA/HP/37+xy6lXQ5rodwmnaBUveA8zTV1hubTKIdGYCeF44TiWYlJ47QVXFeze8VMDAefuhz8/SbCnpEiaYeDo7cSqmYfyOG0vmt9lo+UO1UazxglKZiTsfemu7AIVK2fa/9wwMyEWHV3nrEF5UR/LA/hpM5xmjTf4yWHeqg+0rOrSDS9eHI8/QcAAP//AwCzs9EoZAkAAA==
+    http_version: 
+  recorded_at: Wed, 22 Dec 2021 02:02:28 GMT
+recorded_with: VCR 5.0.0

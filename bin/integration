@@ -1,0 +1,47 @@
+#!/bin/bash
+set -e
+
+if (($#)); then
+  echo 'Running integration tests for single file'
+  cp $* blueprint/temp.apib
+  bundle exec rails s -b 127.0.0.1 -p 3001 -e test > /dev/null &
+  PID=$!
+  sleep 5
+
+  ./node_modules/.bin/dredd blueprint/temp.apib http://127.0.0.1:3001/ --sorted --hookfiles=./hooks*.js
+  rm blueprint/temp.apib
+
+  kill -9 $PID
+  exit $RESULT
+fi
+
+if pgrep -f "backend-api" > /dev/null
+then
+  pkill -f backend-api > /dev/null
+fi
+
+echo 'Preparing environment for integration tests:'
+echo ' Dropping database'
+RAILS_ENV=test bundle exec rake db:drop > /dev/null
+echo ' Creating database'
+RAILS_ENV=test bundle exec rake db:create > /dev/null
+echo ' Migrating database'
+RAILS_ENV=test bundle exec rake db:migrate > /dev/null
+echo ' Seeding database'
+RAILS_ENV=test bundle exec rake db:seed:integration > /dev/null || { echo 'Database reset failed!' ; exit 1; }
+
+echo 'Merging test files'
+(for each in blueprint/*.md; do cat $each; echo ""; done) > apiary.apib
+
+echo 'Running integration tests'
+
+bundle exec rails s -b 127.0.0.1 -p 3001 -e test > /dev/null &
+PID=$!
+sleep 5
+
+#Puma dislikes the --server option Dredd provides
+./node_modules/.bin/dredd apiary.apib 127.0.0.1:3001 --sorted --reporter markdown --hookfiles=./hooks*.js
+kill -9 $PID
+RESULT=$?
+
+exit $RESULT

@@ -1,0 +1,81 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.pagar.me/1/transactions
+    body:
+      encoding: UTF-8
+      string: '{"amount":1000,"postback_url":"http://085af585.ngrok.io","customer":{"name":"Me
+        Salva!","document_number":"98435565009","email":"email@teste.com","phone":{"ddd":"51","number":"991991919"},"address":{"street":"Rua
+        Padre Chagas","neighborhood":"Moinhos de Vento","zipcode":"91920-000","street_number":79,"complementary":"302"}},"metadata":{"user_id":1,"nome":"Me
+        Salva!","logradouro":"Rua Padre Chagas","numero":79,"complemento":"302","bairro":"Moinhos
+        de Vento","cidade":"Porto Alegre","estado":"RS","cep":"91920-000","produto-comprado":"Enem
+        Semestral1","tempo-de-duração-do-produto":6,"data-da-compra":"2020-01-29T15:44:05.963-03:00"},"installments":1,"async":true,"card_id":"card_ckljewknk0iyn0i9t63o9h49m","payment_method":"credit_card","status":"local","card_expiration_date":""}'
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - pagarme-ruby/2.3.0
+      Content-Type:
+      - application/json; charset=utf8
+      Content-Length:
+      - '785'
+      Authorization:
+      - Basic YWtfdGVzdF83UU1XMjk1WmZ1N1RaSGtjMnRCVzhTaFhBZ3pCNmk6eA==
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 29 Jan 2020 18:44:06 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=dbee5f1dd7ab5cbc87112f9e0ba65f4b91580323446; expires=Fri, 28-Feb-20
+        18:44:06 GMT; path=/; domain=.pagar.me; HttpOnly; SameSite=Lax
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type, Authorization, X-Requested-With, X-HTTP-Method-Override
+      Access-Control-Allow-Methods:
+      - GET,PUT,POST,DELETE
+      Access-Control-Allow-Origin:
+      - "*"
+      Charset:
+      - utf-8
+      Etag:
+      - W/"99c-zDVPgo8UYTAolDVKuRBqgS9WozQ"
+      Vary:
+      - X-HTTP-Method-Override
+      X-Pagarme-Version:
+      - '2017-07-17'
+      X-Response-Time:
+      - 275.948ms
+      X-Request-Id:
+      - d51314da-ed90-4245-8189-b5368d3dab57
+      Strict-Transport-Security:
+      - max-age=300; includeSubDomains
+      Cf-Cache-Status:
+      - DYNAMIC
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 55cd5b022ad8f68f-GRU
+      Content-Encoding:
+      - gzip
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA5RWzY7bNhB+FXfOsiPJlmzr1KDNoYcUQXbTQ4pCoMmxzTVFMkPS2U3gp+mhD5IXK6g/y5sNigIGLM7/3zfkVzC7B+QeKvDEtGPcS6MhAeeZDw4qsGQ4Oif1ARIg3AeHNSFzRkOlg1KD6EgExj8FSUiQjJ81obNGO6y5ETgojlzNmu+JUoyk4I+G5BcWY7ux4Mze1wIdJ2m9oYHsr7raheFTMI81J2QeBVSQp3k6T7N5vr3PNtVqVaXlYrnMPkIvGaz4b0nWmKA9VFmaptdAUdQDI03AMnlzjkXU4lZGaueZUg1q76DKEogZrNd5tiw2CXDjOjHOSNRHo8RYNPjgkGb36Dz0bMWcr4U8yGgJsizLBs5e0pS1yqbMHTEdkz1LxwaalbpuJuVuiQ07OE/SYr1nSu0YP0G1Z8phAvzcRJ3xbI3zUaAOpKCCo/e2evUq3RRsX2yKhT6QOS2kgVijp5h73aA/mhgGJxTS19FjG431gfDKRm6aBolj7IH2ck8siNpxQ2OwO6PQm871DWXHaDpDPRUfraRuwmLfBy7hHuMsV8CsrE/4BAlIGwu72S6yLF+stosszyNiwq6bw2jiOoD2aDRC9fUKtI6SgBASKiiK9jMmVcRm6NDsWn/bbRZ/2Ra6aSiW6bJYXxJgQhA6d2NzoEU0EmIkvQ9s9o4JwtkvR3ZgkcdNYxXGQjN6ggqWaT5q1KPjdfSoUR6OO0NH09b7rZH6aNxM4OwP1D62jEv/NF0BY8m+SNvVF7bZNk/TNG1dB+1pVIgJ5cWmLMrykgAPzpsmOp+kNBJ76XK5LtbbBPDRI2mmJjX2T/Y6o7eOhOGhnaxrXTerZVGURZrGPEd+ZwO43cfsO2y9xdkdU2f2EySADZNxiNv/nz06jwtuGug73Nt316kiXTM/HiX5o2BjWAfUAul/bKY8Lz5OwnVQ/fnXJdpVKq7moQ9Hae3kLD02rWiH3dv6dtCSov+u+UP56JpTqdM8I7Mt8Uv6dJTp+gQvRJit5+mmjbCsslW1XC9Wm/WLu/N7yfW23Z3PNs6P19qP9tbLm27oP3z4/bf7N7/O7u5f37+5a83oA5Ilqdv0H4rd5xWXJg5o+pAvHx4LVab8EyRwZiqWxVPAOG/PFgNkeV7AJQFnlfQ1BYVj2xv0TDDPYqV3TBKZH4AH7YCPeQ8QKVgLmneGvJm9VnggvMGsGREbPcwFm0cesWcTU7QTUyy25XKeLqvWODrPRNR/HwuhzIGYMKEN7oU1oc13069Dg1E8AtCSEcGb3ntr9o3GZnaHDTpPTMU2eGysmQuci0Ds2z/f/jZzYea9KlRlAsH1l3x2me7wSQUvw/rVHNvVO8AFz5KPgFeGM1VPXi+TxdDz5PV50Tnh5owU57O/qDoqoWx2gRyO+obEzUuEpDvVCs8YN0HQJ20+6/ZZxFFaP71r+gttfMIIIduX1ZCCdLy7/HtxkucIHMV22Nu4/AsAAP//AwCNv0BsnAkAAA==
+    http_version: 
+  recorded_at: Wed, 29 Jan 2020 18:44:06 GMT
+recorded_with: VCR 5.0.0

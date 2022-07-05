@@ -1,0 +1,419 @@
+pt-BR:
+  activerecord:
+    errors:
+      messages:
+        unauthorized_credit:
+          "Para submeter uma redação a ser corrigida deve haver crédito \
+          em pelo menos um dos acessos do usuário"
+        record_invalid: "A validação falhou: %{errors}"
+        voucher_already_consumed: "Não se pode alterar um voucher já consumido."
+        restrict_dependent_destroy:
+          has_one: Não é possível excluir o registro pois existe um %{record} dependente
+          has_many: Não é possível excluir o registro pois existem %{record} dependentes
+      models:
+        order:
+          invalid_payment_amounts: "Pagamentos devem somar e ser igual ao preço do pacote"
+          multiple_bank_slips: "Para dividir pagamentos, use a opção de pagar com cartão de crédito"
+          invalid_installments_range: "O número de parcelas informado é inválido"
+        order_payment:
+          bank_slip_in_installments: "Para dividir pagamentos, use a opção de pagar com cartão de crédito"
+        medium:
+          invalid_size: Exercício com texto muito comprido, acima dos 8500 bytes permitidos.
+        permalink:
+          not_found: O Permalink com o slug %{slug} não existe.
+          success_canonization: Permalink com slug %{slug} canonizado com sucesso.
+          failure_canonization: "Erro na canonização do permalink com slug %{slug}. Erros: %{errors}"
+        course_structure_summary:
+          slug_must_be_unique: Slug precisa ser único.
+        user:
+          invalid_birth_date: Data de nascimento inválida
+        essay_submission:
+          attributes:
+            uncorrectable_message:
+              validate_uncorrectable_message_presence: Mensagem de recusa deve estar presente
+      libs:
+        delivery:
+          invalid_service: Tipo de serviço inválido
+          invalid_zipcode: CEP inválido
+  date:
+    abbr_day_names:
+      - Dom
+      - Seg
+      - Ter
+      - Qua
+      - Qui
+      - Sex
+      - Sáb
+    abbr_month_names:
+      -
+      - Jan
+      - Fev
+      - Mar
+      - Abr
+      - Mai
+      - Jun
+      - Jul
+      - Ago
+      - Set
+      - Out
+      - Nov
+      - Dez
+    day_names:
+      - Domingo
+      - Segunda-feira
+      - Terça-feira
+      - Quarta-feira
+      - Quinta-feira
+      - Sexta-feira
+      - Sábado
+    formats:
+      default: "%d/%m/%Y"
+      long: "%d de %B de %Y"
+      short: "%d de %B"
+    month_names:
+      -
+      - Janeiro
+      - Fevereiro
+      - Março
+      - Abril
+      - Maio
+      - Junho
+      - Julho
+      - Agosto
+      - Setembro
+      - Outubro
+      - Novembro
+      - Dezembro
+    order:
+      - :day
+      - :month
+      - :year
+    shifts:
+      morning: Manhã
+      mid: Tarde
+      evening: Noite
+      shifts_2: Jornada
+      shifts_3: Jornada
+
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: aproximadamente 1 hora
+        other: aproximadamente %{count} horas
+      about_x_months:
+        one: aproximadamente 1 mês
+        other: aproximadamente %{count} meses
+      about_x_years:
+        one: aproximadamente 1 ano
+        other: aproximadamente %{count} anos
+      almost_x_years:
+        one: quase 1 ano
+        other: quase %{count} anos
+      half_a_minute: meio minuto
+      less_than_x_minutes:
+        one: menos de um minuto
+        other: menos de %{count} minutos
+      less_than_x_seconds:
+        one: menos de 1 segundo
+        other: menos de %{count} segundos
+      over_x_years:
+        one: mais de 1 ano
+        other: mais de %{count} anos
+      x_days:
+        one: 1 dia
+        other: "%{count} dias"
+      x_minutes:
+        one: 1 minuto
+        other: "%{count} minutos"
+      x_months:
+        one: 1 mês
+        other: "%{count} meses"
+      x_seconds:
+        one: 1 segundo
+        other: "%{count} segundos"
+    prompts:
+      day: Dia
+      hour: Hora
+      minute: Minuto
+      month: Mês
+      second: Segundo
+      year: Ano
+  errors:
+    format: "%{attribute} %{message}"
+    messages:
+      invalid_day_shift: "Dia/turno inválidos."
+      invalid_subject: "Matéria inválida."
+      invalid_study_style: "Perfil de estudo inválido."
+      invalid_date: "Data inválida."
+      missing_answers: Preencha todas as respostas.
+      invalid_card_hash: "O tempo de processamento de seu cartão expirou. Preencha novamente os dados do seu cartão e finalize o processo em até 5 minutos"
+      validate_sign_up_params: Os dados submetidos na requisição de cadastro são inválidos.
+      validate_account_update_params: Os dados submetidos para atualização de conta são inválidos.
+      not_email: não é um e-mail
+      accepted: deve ser aceito
+      essay_status: alteração de status não permitida
+      pending_essay_limit: você chegou ao limite de redações submetidas aguardando correção.
+      bad_request: requisição incorreta
+      blank: não pode ficar em branco
+      present: deve ficar em branco
+      confirmation: não é igual a %{attribute}
+      empty: não pode ficar vazio
+      equal_to: deve ser igual a %{count}
+      even: deve ser par
+      exclusion: não está disponível
+      greater_than: deve ser maior que %{count}
+      greater_than_or_equal_to: deve ser maior ou igual a %{count}
+      inclusion: não está incluído na lista
+      invalid: não é válido
+      less_than: deve ser menor que %{count}
+      less_than_or_equal_to: deve ser menor ou igual a %{count}
+      model_invalid: "A validação falhou: %{errors}"
+      not_a_number: não é um número
+      not_an_integer: não é um número inteiro
+      odd: deve ser ímpar
+      required: deve existir
+      taken: já está em uso
+      checkout_timeout: Não foi possível efetuar o seu pagamento. Tente mais tarde
+      unsubscribe_timeout: Não foi possível cancelar sua assinatura. Tente mais tarde
+      not_found_answer_grid: Gabarito não disponível.
+      too_long:
+        one: "é muito longo (máximo: 1 caracter)"
+        other: "é muito longo (máximo: %{count} caracteres)"
+      too_short:
+        one: "é muito curto (mínimo: 1 caracter)"
+        other: "é muito curto (mínimo: %{count} caracteres)"
+      wrong_length:
+        one: não possui o tamanho esperado (1 caracter)
+        other: não possui o tamanho esperado (%{count} caracteres)
+      other_than: deve ser diferente de %{count}
+      forbidden: Parâmetros proibidos.
+      payment_required: Adiquira um plano para ter acesso a esta operação
+      unprocessable: Parâmetros inválidos.
+      client: Ajuste o horário do seu relógio para continuar usando o Me Salva!
+      invalid_zip: CEP inválido
+      invalid_cnpj: Formato do CNPJ inválido
+      inactive_package: O pacote está inativo.
+      invalid_subscription_price: Assinatura por boleto nāo pode conter preço por cartāo
+      invalid_inviter: Usuário que fez o convite inválido
+      carrierwave_processing_error: failed to be processed
+      carrierwave_integrity_error: is not of an allowed file type
+      carrierwave_download_error: could not be downloaded
+      extension_whitelist_error: "Não é permitido o envio de arquivos de extensão %{extension}, formatos permitidos: %{allowed_types}"
+      extension_blacklist_error: "Não é permitido o envio de arquivos de extensão %{extension}, formatos proibidos: %{prohibited_types}"
+      content_type_whitelist_error: "Não é permitido o envio de arquivos %{content_type}"
+      content_type_blacklist_error: "Não é permitido o envio de arquivos %{content_type}"
+      rmagick_processing_error: "Rmagick falhou ao manipular a imagem?"
+      mini_magick_processing_error: "MiniMagick falhou ao manipular aa imagem. Mensagem de erro original: %{e}"
+      min_size_error: "O tamanho do arquivo deve ser maior do que %{min_size}"
+      max_size_error: "O tamanho do arquivo deve ser menor do que %{max_size}"
+      invalid_platform: Plataforma Inválida.
+      user_platform_not_found: Usuário não encontrado nesta plataforma
+      invalid_order_param: "Parametro order contém um valor inválido"
+      meta_description: Meta description excede número de caracteres permitido.
+      meta_title: Meta title excede número de caracteres permitido.
+      already_instructor: Usuário atual já é instrutor.
+      old_admin_reference: "Admin antigo não encontrado na tabela de usuários"
+      unauthenticated_permission: "Usuário sem autorização para acessar"
+    template:
+      body: "Por favor, verifique o(s) seguinte(s) campo(s):"
+      header:
+        one: "Não foi possível gravar %{model}: 1 erro"
+        other: "Não foi possível gravar %{model}: %{count} erros"
+  helpers:
+    select:
+      prompt: Por favor selecione
+    submit:
+      create: Criar %{model}
+      submit: Salvar %{model}
+      update: Atualizar %{model}
+  number:
+    currency:
+      format:
+        delimiter: "."
+        format: "%u %n"
+        precision: 2
+        separator: ","
+        significant: false
+        strip_insignificant_zeros: false
+        unit: R$
+    format:
+      delimiter: "."
+      precision: 3
+      separator: ","
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion:
+            one: bilhão
+            other: bilhões
+          million:
+            one: milhão
+            other: milhões
+          quadrillion:
+            one: quatrilhão
+            other: quatrilhões
+          thousand: mil
+          trillion:
+            one: trilhão
+            other: trilhões
+          unit: ""
+      format:
+        delimiter: ""
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: Byte
+            other: Bytes
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        delimiter: "."
+        format: "%n%"
+    precision:
+      format:
+        delimiter: "."
+  support:
+    array:
+      last_word_connector: " e "
+      two_words_connector: " e "
+      words_connector: ", "
+  time:
+    am: ""
+    formats:
+      default: "%a, %d de %B de %Y, %H:%M:%S %z"
+      long: "%d de %B de %Y, %H:%M"
+      short: "%d de %B, %H:%M"
+      date: "%Y-%m-%d %H:%M:%S.%9N %z"
+    pm: ""
+  devise_token_auth:
+    sessions:
+      not_confirmed: Uma mensagem com um link de confirmação foi enviado para seu endereço de e-mail. Você precisa confirmar sua conta antes de continuar.
+      bad_credentials: E-mail ou senha inválidos.
+      not_supported: Use POST /sign_in para efetuar o login. GET não é suportado.
+      user_not_found: Usuário não existe ou não está logado.
+      invalid_provider: Rede social inválida
+    token_validations:
+      invalid: Dados de login inválidos.
+    registrations:
+      missing_confirm_success_url: Parâmetro 'confirm_success_url' não informado.
+      redirect_url_not_allowed: Redirecionamento para '%{redirect_url}' não permitido.
+      email_already_exists: Já existe uma conta com o email '%{email}'.
+      account_with_uid_destroyed: A conta com uid '%{uid}' foi excluída.
+      account_to_destroy_not_found: Não foi possível encontrar a conta para exclusão.
+      user_not_found: Usuário não encontrado.
+    passwords:
+      missing_email: Informe o endereço de e-mail.
+      missing_redirect_url: URL para redirecionamento não informada.
+      not_allowed_redirect_url: Redirecionamento para '%{redirect_url}' não permitido.
+      sended: Você receberá um e-mail com instruções sobre como redefinir sua senha.
+      user_not_found: Não existe um usuário com o e-mail '%{email}'.
+      password_not_required: Esta conta não necessita de uma senha. Faça login utilizando '%{provider}'.
+      missing_passwords: Preencha a senha e a confirmação de senha.
+      successfully_updated: Senha atualizada com sucesso.
+      invalid_password: Senha inválida.
+  discount:
+    invalid_discount: Desconto inválido.
+  events:
+    invalid_params: Evento ou parâmetros inválidos.
+  invoice:
+    invalid_invoice: Fatura inválida.
+  permalink:
+    invalid_permalink: Request de permalink inválido.
+    unauthorized: Você não tem acesso a este item.
+    invalid_entities: Conteúdo não encontrado.
+    duplicated_permalink: permalink já existente
+  state_machine:
+    invalid_status: Parâmetro status ausente
+  google:
+    api_connection_error: Erro ao se conectar com a API do Google
+  nonexistent_column: Coluna inexistente
+  canonicals:
+    success_creation: Sucesso na criação do canonical com slug '%{slug}'
+    error_creation: 'Erro na criação do canonical com slug "%{slug}". Erro(s): %{error}'
+    not_found: Canonical com slug %{slug} não encontrado.
+  mailer:
+    voucher:
+      invitation:
+        subject: Parabéns! Você ganhou uma bolsa de estudos para doar!
+      create_access:
+        subject: Parabéns! Sua bolsa de estudos foi ativada!
+      remove_access:
+        subject: Sua bolsa de estudos foi cancelada :(
+    essay_submission:
+      delivered:
+        subject: Sua redação chegou!
+      uncorrectable:
+        subject: Redação recusada
+      re_corrected:
+        subject: Correção editada
+    checkout:
+      logo_email_mesalva: https://d335luupugsy2.cloudfront.net/cms/files/83545/1553706602/$h4dixgg89mu
+      bank_slip_after_checkout:
+        subject: Aqui está o boleto para pagamento
+        preheader_base: Seu acesso está pendente. Para iniciar seus estudos, realize o pagamento até amanhã, %{due_date}.
+        initial_message: Ficamos felizes que você tenha escolhido o Me Salva! para ser o seu parceiro de estudos. Para que você possa iniciar seu aprendizado, pedimos que realize o pagamento do seu boleto.
+        final_message: Depois de pagar o boleto, o seu acesso será liberado em até 3 dias úteis. Qualquer dúvida, acesse nossa %{help_center} ou entre em contato pelo %{whatsapp}.
+      bank_slip_last_day:
+        subject: Último dia para pagamento do boleto
+        preheader_base: Seu acesso está pendente. Para iniciar seus estudos, realize o pagamento ainda hoje.
+        initial_message: Lembramos que hoje é o último dia para você pagar o seu boleto. Caso você já tenha feito o pagamento, fique tranquilo, o sistema pode levar até 3 dias para processar a operação.
+        final_message: Logo que a confirmação de pagamento acontecer, o seu acesso será liberado. Qualquer dúvida, acesse nossa %{help_center} ou entre em contato pelo %{whatsapp}.
+      bank_slip_overdue:
+        subject: Seu boleto venceu
+        preheader_base: Caso você não tenha conseguido pagar a tempo e ainda queira garantir o seu acesso ao Me Salva!, você pode emitir um novo boleto sem custo.
+        initial_message: Seu boleto venceu. Caso você não tenha conseguido pagar a tempo e ainda queira garantir o seu acesso ao Me Salva!, você pode emitir um novo boleto sem custo. É só você %{plans} e efetuar sua compra novamente.
+        final_message: Se você já pagou, desconsidere esta mensagem. O seu acesso será liberado em até 3 dias úteis. Qualquer dúvida, acesse nossa %{help_center} ou entre em contato pelo %{whatsapp}.
+  prep_test:
+    tri:
+      api_connection_error: Erro ao se conectar com a API de simulação do TRI
+  essay_submission:
+    notification:
+      draft_created_and_not_sent: Plano de texto pronto! Agora só falta a redação :)
+    admin_status_message:
+      status_0: Rascunho
+      status_1: Aguardando Correção
+      status_2: Corrigindo
+      status_3: Corrigida
+      status_4: Entregue
+      status_5: Cancelada
+      status_6: Incorrigível
+      status_7: Recorrigindo
+      status_8: Recorrigida
+    description:
+      status_0: Termine o seu plano de texto e envie uma redação
+      status_1: "Enviada em: %{date}"
+      status_2: "Enviada em: %{date}"
+      status_3: "Corrigida em: %{date}"
+      status_4: "Corrigida em: %{date}"
+      status_5: Você cancelou este envio
+      status_6: "Rejeitada em: %{date}"
+      status_7: "Enviada em: %{date}"
+      status_8: "Corrigida em: %{date}"
+    student_status_message:
+      status_0: Rascunho
+      status_1: Aguardando Correção
+      status_2: Aguardando Correção
+      status_3: Corrigida
+      status_4: Corrigida
+      status_5: Cancelada
+      status_6: Incorrigível
+      status_7: Aguardando Correção
+      status_8: Corrigida
+  book_shop_gift:
+    error:
+      gifts_ran_out: Não existem mais cupons para distribuir e existe uma promoção ativa. bookshop_gift_package.id = %{id}
+  crm:
+    chat_guru:
+      message_unfinished_checkout: Olá, vi que você tentou realizar uma compra no Me Salva!, precisa de alguma ajuda?
+      user_without_phone: Usuário sem telefone cadastrado
+      no_permission_to_receive_message: Usuário sem permissão para receber mensagens

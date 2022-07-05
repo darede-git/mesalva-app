@@ -1,0 +1,68 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.pagar.me/1/transactions
+    body:
+      encoding: UTF-8
+      string: '{"amount":1000,"postback_url":"http://085af585.ngrok.io","customer":{"name":"Me
+        Salva!","document_number":"98435565009","email":"email@teste.com","phone":{"ddd":"51","number":"991991919"}},"metadata":{"user_id":4,"nome":"Me
+        Salva!","logradouro":null,"numero":null,"complemento":null,"bairro":null,"cidade":null,"estado":null,"cep":null,"produto-comprado":"Enem
+        Semestral4","tempo-de-duração-do-produto":6,"data-da-compra":"2020-01-29T15:36:40.486-03:00"},"installments":1,"async":true,"card_id":"card_ckljewknk0iyn0i9t63o9h49m","payment_method":"credit_card","status":"local","card_expiration_date":""}'
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - pagarme-ruby/2.3.0
+      Content-Type:
+      - application/json; charset=utf8
+      Content-Length:
+      - '604'
+      Authorization:
+      - Basic YWtfdGVzdF83UU1XMjk1WmZ1N1RaSGtjMnRCVzhTaFhBZ3pCNmk6eA==
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 29 Jan 2020 18:36:41 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '2221'
+      Connection:
+      - keep-alive
+      Server:
+      - openresty
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type, Authorization, X-Requested-With, X-HTTP-Method-Override
+      Access-Control-Allow-Methods:
+      - GET,PUT,POST,DELETE
+      Access-Control-Allow-Origin:
+      - "*"
+      Charset:
+      - utf-8
+      Etag:
+      - W/"8ad-Liz2G4yqhOUbSoWgaf5bPo8mAJ0"
+      Vary:
+      - X-HTTP-Method-Override
+      X-Pagarme-Version:
+      - '2017-07-17'
+      X-Response-Time:
+      - 144.013ms
+      X-Request-Id:
+      - 7ecd1ab3-1b39-488c-9c2b-7dab676b8c47
+      Strict-Transport-Security:
+      - max-age=300; includeSubDomains
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJvYmplY3QiOiJ0cmFuc2FjdGlvbiIsInN0YXR1cyI6InByb2Nlc3NpbmciLCJyZWZ1c2VfcmVhc29uIjpudWxsLCJzdGF0dXNfcmVhc29uIjoiYWNxdWlyZXIiLCJhY3F1aXJlcl9yZXNwb25zZV9jb2RlIjpudWxsLCJhY3F1aXJlcl9uYW1lIjpudWxsLCJhY3F1aXJlcl9pZCI6bnVsbCwiYXV0aG9yaXphdGlvbl9jb2RlIjpudWxsLCJzb2Z0X2Rlc2NyaXB0b3IiOm51bGwsInRpZCI6bnVsbCwibnN1IjpudWxsLCJkYXRlX2NyZWF0ZWQiOiIyMDIwLTAxLTI5VDE4OjM2OjQxLjI2NVoiLCJkYXRlX3VwZGF0ZWQiOiIyMDIwLTAxLTI5VDE4OjM2OjQxLjI2NVoiLCJhbW91bnQiOjEwMDAsImF1dGhvcml6ZWRfYW1vdW50IjowLCJwYWlkX2Ftb3VudCI6MCwicmVmdW5kZWRfYW1vdW50IjowLCJpbnN0YWxsbWVudHMiOjEsImlkIjo3NzIxMjk3LCJjb3N0IjowLCJjYXJkX2hvbGRlcl9uYW1lIjoiVXNlciBUZXN0IiwiY2FyZF9sYXN0X2RpZ2l0cyI6IjExMTEiLCJjYXJkX2ZpcnN0X2RpZ2l0cyI6IjQxMTExMSIsImNhcmRfYnJhbmQiOiJ2aXNhIiwiY2FyZF9waW5fbW9kZSI6bnVsbCwiY2FyZF9tYWdzdHJpcGVfZmFsbGJhY2siOmZhbHNlLCJjdm1fcGluIjpmYWxzZSwicG9zdGJhY2tfdXJsIjoiaHR0cDovLzA4NWFmNTg1Lm5ncm9rLmlvIiwicGF5bWVudF9tZXRob2QiOiJjcmVkaXRfY2FyZCIsImNhcHR1cmVfbWV0aG9kIjoiZWNvbW1lcmNlIiwiYW50aWZyYXVkX3Njb3JlIjpudWxsLCJib2xldG9fdXJsIjpudWxsLCJib2xldG9fYmFyY29kZSI6bnVsbCwiYm9sZXRvX2V4cGlyYXRpb25fZGF0ZSI6bnVsbCwicmVmZXJlciI6ImFwaV9rZXkiLCJpcCI6IjE4OS4xMTIuNDkuMTIyIiwic3Vic2NyaXB0aW9uX2lkIjpudWxsLCJwaG9uZSI6eyJvYmplY3QiOiJwaG9uZSIsImRkaSI6IjU1IiwiZGRkIjoiNTEiLCJudW1iZXIiOiI5OTE5OTE5MTkiLCJpZCI6NTMwMzM1fSwiYWRkcmVzcyI6bnVsbCwiY3VzdG9tZXIiOnsib2JqZWN0IjoiY3VzdG9tZXIiLCJpZCI6MjYzNzUyOCwiZXh0ZXJuYWxfaWQiOm51bGwsInR5cGUiOm51bGwsImNvdW50cnkiOm51bGwsImRvY3VtZW50X251bWJlciI6Ijk4NDM1NTY1MDA5IiwiZG9jdW1lbnRfdHlwZSI6ImNwZiIsIm5hbWUiOiJNZSBTYWx2YSEiLCJlbWFpbCI6ImVtYWlsQHRlc3RlLmNvbSIsInBob25lX251bWJlcnMiOm51bGwsImJvcm5fYXQiOm51bGwsImJpcnRoZGF5IjpudWxsLCJnZW5kZXIiOm51bGwsImRhdGVfY3JlYXRlZCI6IjIwMjAtMDEtMjlUMTg6MzY6NDEuMjIxWiIsImRvY3VtZW50cyI6W119LCJiaWxsaW5nIjpudWxsLCJzaGlwcGluZyI6bnVsbCwiaXRlbXMiOltdLCJjYXJkIjp7Im9iamVjdCI6ImNhcmQiLCJpZCI6ImNhcmRfY2o2eHNtazZuMDIxcm85NmV6MHloaTA3ayIsImRhdGVfY3JlYXRlZCI6IjIwMTctMDgtMjlUMTY6MTQ6MzcuNDg3WiIsImRhdGVfdXBkYXRlZCI6IjIwMTctMDgtMjlUMTY6MTQ6MzcuNzkxWiIsImJyYW5kIjoidmlzYSIsImhvbGRlcl9uYW1lIjoiVXNlciBUZXN0IiwiZmlyc3RfZGlnaXRzIjoiNDExMTExIiwibGFzdF9kaWdpdHMiOiIxMTExIiwiY291bnRyeSI6IlVOSVRFRCBTVEFURVMiLCJmaW5nZXJwcmludCI6ImNqNWJ3NGNpbzAwMDAwajIzang1bDYwY3EiLCJ2YWxpZCI6dHJ1ZSwiZXhwaXJhdGlvbl9kYXRlIjoiMTIyNSJ9LCJzcGxpdF9ydWxlcyI6bnVsbCwibWV0YWRhdGEiOnsiYmFpcnJvIjpudWxsLCJjZXAiOm51bGwsImNpZGFkZSI6bnVsbCwiY29tcGxlbWVudG8iOm51bGwsImRhdGEtZGEtY29tcHJhIjoiMjAyMC0wMS0yOVQxNTozNjo0MC40ODYtMDM6MDAiLCJlc3RhZG8iOm51bGwsImxvZ3JhZG91cm8iOm51bGwsIm5vbWUiOiJNZSBTYWx2YSEiLCJudW1lcm8iOm51bGwsInByb2R1dG8tY29tcHJhZG8iOiJFbmVtIFNlbWVzdHJhbDQiLCJ0ZW1wby1kZS1kdXJhw6fDo28tZG8tcHJvZHV0byI6NiwidXNlcl9pZCI6NH0sImFudGlmcmF1ZF9tZXRhZGF0YSI6e30sInJlZmVyZW5jZV9rZXkiOm51bGwsImRldmljZSI6bnVsbCwibG9jYWxfdHJhbnNhY3Rpb25faWQiOm51bGwsImxvY2FsX3RpbWUiOm51bGwsImZyYXVkX2NvdmVyZWQiOmZhbHNlLCJmcmF1ZF9yZWltYnVyc2VkIjpudWxsLCJvcmRlcl9pZCI6bnVsbCwicmlza19sZXZlbCI6InVua25vd24iLCJyZWNlaXB0X3VybCI6bnVsbCwicGF5bWVudCI6bnVsbCwiYWRkaXRpb24iOm51bGwsImRpc2NvdW50IjpudWxsLCJwcml2YXRlX2xhYmVsIjpudWxsfQ==
+    http_version: 
+  recorded_at: Wed, 29 Jan 2020 18:36:41 GMT
+recorded_with: VCR 5.0.0

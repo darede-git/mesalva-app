@@ -1,0 +1,121 @@
+<%
+  redirect_url = ENV['DEFAULT_ADMIN_URL'] + ENV["#{@resource.class.to_s.upcase}_INVITE_URI"]
+  if @resource.class == Teacher
+    color1 = '#efebe1'
+    color2 = '#333333'
+    image = 'https://ci4.googleusercontent.com/proxy/HyFYNc-fNtBnN4utpGXnGKie8eNBJP7wLlLhhD2_uLao3tvlTUkFGo_1n_3DQzK5YyYCmxSyqQHD9-acBKRj1eAZvPJjn1PFoMWrS7KD3nl6kQ87IDRFsd2AnoRbnLp-dvVnUjCG2zSEKOIuNWLvz7pWRT98Oshb5rQrFOw=s0-d-e1-ft#https://gallery.mailchimp.com/f33f2a91776c516c087bf1e51/images/5b71a86d-f9e9-4721-9ac9-80022250c9f4.png'
+  else
+    color1 = '#333333'
+    color2 = '#efebe1'
+    image = 'https://ci4.googleusercontent.com/proxy/WZUg-RIEj2s7unKF-xao_Z0AyliiD79m_IfmlmaZ3xZp_DyO3KKt8B9hdl4UI9mtvxqYgIzie-FPpoqkuMfNF1hR5qIzzUCNYirikS3b-_WJA79MZ1B3So4M8qOqmlnwO5p_AfE9rEguJ0VJ5e-8vg56HjaejBei_Bb9IQQ=s0-d-e1-ft#https://gallery.mailchimp.com/f33f2a91776c516c087bf1e51/images/f71f2a16-c52f-4915-9ecc-951270e9629b.png'
+  end
+%>
+<table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" style= <%= "border-collapse:collapse;height:100%;margin:0;padding:0;width:100%;background-color:#{color1}" %>>
+   <tbody>
+      <tr>
+         <td align="center" valign="top" style="height:100%;margin:0;padding:10px;width:100%;border-top:0">
+            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse;border:0;max-width:600px!important">
+               <tbody>
+                  <tr>
+                     <td valign="top" style="background-color:#ffffff;border-top:0;border-bottom:0;padding-top:0px;padding-bottom:0px">
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%;border-collapse:collapse">
+                           <tbody>
+                              <tr>
+                                 <td valign="top" style="padding:0px">
+                                    <table align="left" width="100%" border="0" cellpadding="0" cellspacing="0" style="min-width:100%;border-collapse:collapse">
+                                       <tbody>
+                                          <tr>
+                                             <td valign="top" style="padding-right:0px;padding-left:0px;padding-top:0;padding-bottom:0;text-align:center">
+                                                <img align="center" alt="" src= <%= image %> width="600" style="max-width:600px;padding-bottom:0;display:inline!important;vertical-align:bottom;border:0;min-height:auto;outline:none;text-decoration:none" class="CToWUd">
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td valign="top" style="background-color:#ffffff;border-top:0;border-bottom:0;padding-top:0px;padding-bottom:0">
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%;border-collapse:collapse">
+                           <tbody>
+                              <tr>
+                                 <td valign="top" style="padding-top:9px">
+                                    <table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width:100%;min-width:100%;border-collapse:collapse" width="100%">
+                                       <tbody>
+                                          <tr>
+                                             <td valign="top" style="padding:0px 18px 9px;font-weight:normal;word-break:break-word;color:#202020;font-family:Helvetica;font-size:16px;line-height:150%;text-align:left">
+                                                <div style="line-height:normal;text-align:center"><br>
+                                                   <br>
+                                                   <font face="arial, helvetica, sans-serif"><span style="font-size:18px"><strong><span style="color:#676767">BEM-VINDO AO ME SALVA!</span></strong></span></font>
+                                                </div>
+                                                <div style="color:#222222;font-family:arial,sans-serif;font-size:12.8px;line-height:normal"><br>
+                                                   <br>
+                                                   <span style="font-size:14px"><span style="color:#676767">Eai, <%= @resource.name.split.first %>!<br>
+                                                   <br>
+                                                   Seja bem-vindo.&nbsp;A partir de agora você terá acesso privilegiado ao conteúdo do Me Salva! e,&nbsp;com esses superpoderes, &nbsp;você faz parte da nossa missão! Vamos juntos, tornar a experiência de ensino de cada estudante cada vez mais incrível e aproximá-lo&nbsp;dos seu sonhos!<br>
+                                                   <br>
+                                                   Aperte no botão abaixo para&nbsp;concluir&nbsp;seu cadastro!</span></span><br>
+                                                   <br>
+                                                   &nbsp;
+                                                </div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td valign="top" style="background-color:#ffffff;border-top:0;border-bottom:2px solid #eaeaea;padding-top:0;padding-bottom:9px">
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%;border-collapse:collapse">
+                           <tbody>
+                              <tr>
+                                 <td style="padding-top:0;padding-right:18px;padding-bottom:18px;padding-left:18px" valign="top" align="center">
+                                    <table border="0" cellpadding="0" cellspacing="0" style="border-collapse:separate!important;border-radius:2px;background-color:#ed4343">
+                                       <tbody>
+                                          <tr>
+                                             <td align="center" valign="middle" style="font-family:&quot;Helvetica Neue&quot;,Helvetica,Arial,Verdana,sans-serif;font-size:13px;padding:15px">
+                                               <%= link_to 'COMEÇAR', redirect_url + '?' + :invitation_token.to_s + '=' + @token.to_s, { :style=>style='font-weight:normal;letter-spacing:1px;line-height:100%;text-align:center;text-decoration:none;color:#efebe1;display:block' } %>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td valign="top" style=<%="background-color:#{color2};border-top:0;border-bottom:0;padding-top:0px;padding-bottom:0px"%>>
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%;border-collapse:collapse">
+                           <tbody>
+                              <tr>
+                                 <td valign="top" style="padding:0px">
+                                    <table align="left" width="100%" border="0" cellpadding="0" cellspacing="0" style="min-width:100%;border-collapse:collapse">
+                                       <tbody>
+                                          <tr>
+                                             <td valign="top" style="padding-right:0px;padding-left:0px;padding-top:0;padding-bottom:0;text-align:center">
+                                                <img align="center" alt="" src="https://ci4.googleusercontent.com/proxy/StLwlRZBNQwa5oJoTENKdeCEaiL-XG2bR2xU6sgHdCqquL3U_NrThgNjLboB-SVUHRJtGni01BFONkVBavRGAaO55ELNvAH13AVoJBQHI5e07thXnxZBGvTQgVoRTLvFJ55n6nNORfubt4B80BqZ8yvmEEfKMHqtmxwODJ0=s0-d-e1-ft#https://gallery.mailchimp.com/f33f2a91776c516c087bf1e51/images/884ec7b0-8eed-43f4-a549-d14d1434fbda.png" width="300" style="max-width:600px;padding-bottom:0;display:inline!important;vertical-align:bottom;border:0;min-height:auto;outline:none;text-decoration:none" class="CToWUd">
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+         </td>
+      </tr>
+   </tbody>
+</table>

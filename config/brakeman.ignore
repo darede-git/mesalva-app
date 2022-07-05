@@ -1,0 +1,105 @@
+{
+  "ignored_warnings": [
+    {
+      "warning_type": "SQL Injection",
+      "warning_code": 0,
+      "fingerprint": "2d0a628772fb124386fa5817b2acc2edb90bb513a053a13d1c31e4b1916b53fc",
+      "check_name": "SQL",
+      "message": "Possible SQL injection",
+      "file": "app/models/concerns/study_plan_user_accessible_node_modules_query.rb",
+      "line": 15,
+      "link": "http://brakemanscanner.org/docs/warning_types/sql_injection/",
+      "code": "StudyPlanNodeModule.connection.select_all(\"WITH user_accesses AS\\n           (SELECT array_agg(DISTINCT np.node_id) AS list,\\n                   CASE COUNT(DISTINCT np.node_id)\\n                       WHEN 0 THEN #{ENV[\"STUDY_PLAN_TRIAL_SIZE\"]}\\n                       ELSE 1400\\n                   END AS node_modules_limit\\n            FROM accesses a\\n            LEFT JOIN packages p ON p.id = a.package_id\\n            LEFT JOIN nodes_packages np ON np.package_id = p.id\\n            LEFT JOIN package_features pf ON p.id = pf.package_id AND pf.feature_id = 1\\n            WHERE a.active IS TRUE\\n              AND p.active IS TRUE\\n              AND a.expires_at >= now()\\n              AND a.user_id = #{user_id.to_i} AND\\n              pf.id IS NOT NULL),\\n            completed_node_modules AS\\n         (SELECT DISTINCT node_module_id,\\n                           completed,\\n                           already_known\\n          FROM study_plan_node_modules\\n          WHERE study_plan_id IN\\n              (SELECT id\\n               FROM study_plans\\n               WHERE user_id = #{user_id.to_i})\\n            AND (completed IS TRUE\\n                 OR already_known IS TRUE))\\n         SELECT nm.id AS node_module_id,\\n                COALESCE(cnm.completed, false) completed,\\n                COALESCE(cnm.already_known, false) already_known,\\n                nm.relevancy,\\n                (array[#{subject_ids}] & node_ids)[1] AS subject_id,\\n                coalesce(b.hours_duration, 1) AS hours_duration\\n         FROM\\n           (SELECT DISTINCT p.node_module_id,\\n                            array_agg(DISTINCT pn2.node_id) AS node_ids\\n            FROM nodes ntop\\n            INNER JOIN permalink_nodes pn ON pn.node_id = ntop.id\\n            INNER JOIN permalinks p ON p.id = pn.permalink_id\\n            AND p.node_module_id IS NOT NULL\\n            AND p.item_id IS NULL\\n            INNER JOIN permalink_nodes pn2 ON pn.permalink_id = pn2.permalink_id\\n            INNER JOIN nodes n ON n.id = pn.node_id\\n            AND n.active IS TRUE\\n            WHERE ntop.id = #{ENV[\"STUDY_PLAN_TOP_NODE_ID\"]}\\n            GROUP BY p.node_module_id) a\\n         INNER JOIN node_modules nm ON nm.id = a.node_module_id\\n         AND nm.active IS TRUE\\n         LEFT JOIN LATERAL\\n           (SELECT completed,\\n                   already_known\\n            FROM completed_node_modules\\n            WHERE completed_node_modules.node_module_id = a.node_module_id) cnm ON TRUE\\n         LEFT JOIN\\n           (SELECT nm.id AS node_module_id,\\n                   (((sum(mv.seconds_duration) + (count(me.id) * 180) + (count(mt.id) * 300)) / 60::FLOAT) / 60::FLOAT)::NUMERIC (6, 2) AS hours_duration\\n            FROM node_modules nm\\n            JOIN node_module_items nmi ON nmi.node_module_id = nm.id\\n            JOIN items i ON i.id = nmi.item_id\\n            AND i.active IS TRUE\\n            JOIN item_media im ON im.item_id = nmi.item_id\\n            LEFT JOIN media mv ON mv.id = im.medium_id\\n            AND mv.active IS TRUE\\n            AND mv.medium_type::TEXT = 'video'::TEXT\\n            LEFT JOIN media me ON me.id = im.medium_id\\n            AND me.active IS TRUE\\n            AND me.medium_type::TEXT = 'fixation_exercise'::TEXT\\n            LEFT JOIN media mt ON mt.id = im.medium_id\\n            AND mt.active IS TRUE\\n            AND mt.medium_type::TEXT = 'text'::TEXT\\n            WHERE nm.active IS TRUE\\n            GROUP BY nm.id) b ON b.node_module_id = nm.id\\n         WHERE array[#{subject_ids}] && node_ids\\n           AND node_ids &&\\n             (SELECT COALESCE(\\n                                (SELECT list\\n                                 FROM user_accesses), array[#{ENV[\"STUDY_PLAN_TOP_NODE_ID\"]}]))\\n         ORDER BY relevancy,\\n                  POSITION\\n         LIMIT\\n           (SELECT node_modules_limit\\n            FROM user_accesses)\")",
+      "render_path": null,
+      "location": {
+        "type": "method",
+        "class": "StudyPlanUserAccessibleNodeModulesQuery",
+        "method": "by_user_subjects"
+      },
+      "user_input": "ENV[\"STUDY_PLAN_TRIAL_SIZE\"]",
+      "confidence": "Medium",
+      "note": ""
+    },
+    {
+      "warning_type": "SQL Injection",
+      "warning_code": 0,
+      "fingerprint": "50c14ed29eb15e0fd6a0dca03b167022bdd9013b1fa5e76abd8e8a40672b5d8d",
+      "check_name": "SQL",
+      "message": "Possible SQL injection",
+      "file": "app/models/concerns/sisu_institutes_weightings_query.rb",
+      "line": 87,
+      "link": "http://brakemanscanner.org/docs/warning_types/sql_injection/",
+      "code": "SisuInstitute.connection.select_all(\"WITH scores AS\\n  ( SELECT #{scores[:cnat]}::FLOAT cnat_score,\\n           #{scores[:chum]}::FLOAT chum_score,\\n           #{scores[:ling]}::FLOAT ling_score,\\n           #{scores[:mat]}::FLOAT mat_score,\\n           #{scores[:red]}::FLOAT red_score )\\nSELECT tmp.*,\\n       CAST(SUM((cnat_avg + chum_avg + ling_avg + mat_avg + red_avg)/(cnat_weight + chum_weight + ling_weight + mat_weight + red_weight)) as DECIMAL(8,2)) average,\\n       CASE WHEN passing_score > SUM((cnat_avg + chum_avg + ling_avg + mat_avg + red_avg)/(cnat_weight + chum_weight + ling_weight + mat_weight + red_weight))\\n         THEN false\\n         ELSE true\\n        END chances\\nFROM\\n  ( SELECT DISTINCT initials,\\n           ies,\\n           coalesce(college, '') college,\\n           sisu_institutes.course,\\n           grade,\\n           sisu_institutes.shift,\\n           modality,\\n           sisu_institutes.semester,\\n           coalesce(cnat_weight, 1) cnat_weight,\\n           coalesce(chum_weight, 1) chum_weight,\\n           coalesce(ling_weight, 1) ling_weight,\\n           coalesce(mat_weight, 1) mat_weight,\\n           coalesce(red_weight, 1) red_weight,\\n           scores.cnat_score cnat_score,\\n           scores.chum_score,\\n           scores.ling_score,\\n           scores.mat_score,\\n           scores.red_score,\\n           coalesce(cnat_weight * cnat_score, cnat_score) cnat_avg,\\n           coalesce(chum_weight * chum_score, chum_score) chum_avg,\\n           coalesce(ling_weight * ling_score, ling_score) ling_avg,\\n           coalesce(mat_weight * mat_score, mat_score) mat_avg,\\n           coalesce(red_weight * red_score, red_score) red_avg,\\n           CAST(REPLACE(passing_score, ',', '.') as DECIMAL(8,2)) passing_score\\n   FROM sisu_institutes\\n   LEFT JOIN sisu_weightings ON institute = ies\\n   AND sisu_institutes.course = sisu_weightings.course\\n   AND sisu_institutes.shift = sisu_weightings.shift\\n   AND sisu_institutes.year = sisu_weightings.year\\n   AND sisu_institutes.semester = sisu_weightings.semester\\n   LEFT JOIN scores ON TRUE\\n   WHERE sisu_institutes.year = '#{ENV[\"SISU_YEAR\"]}'\\n     AND sisu_institutes.semester = '#{ENV[\"SISU_SEMESTER\"]}'\\n     AND state = '#{state}'\\n     AND sisu_institutes.course = '#{course}'\\n     AND modality = '#{modality}' ) tmp\\nGROUP BY initials,\\n         ies,\\n         college,\\n         course,\\n         grade,\\n         shift,\\n         modality,\\n         passing_score,\\n         semester,\\n         cnat_weight,\\n         chum_weight,\\n         ling_weight,\\n         mat_weight,\\n         red_weight,\\n         cnat_score,\\n         chum_score,\\n         ling_score,\\n         mat_score,\\n         red_score,\\n         cnat_avg,\\n         chum_avg,\\n         ling_avg,\\n         mat_avg,\\n         red_avg\\nORDER BY chances DESC NULLS LAST, passing_score\")",
+      "render_path": null,
+      "location": {
+        "type": "method",
+        "class": "SisuInstitutesWeightingsQuery",
+        "method": "by_state_ies_modality"
+      },
+      "user_input": "scores[:cnat]",
+      "confidence": "Medium",
+      "note": ""
+    },
+    {
+      "warning_type": "SQL Injection",
+      "warning_code": 0,
+      "fingerprint": "6fe6eb2f66a21a39c1efe7ace50c7a8813a1420f921af908d28907a613c4e642",
+      "check_name": "SQL",
+      "message": "Possible SQL injection",
+      "file": "lib/me_salva/content/materialized_views.rb",
+      "line": 21,
+      "link": "http://brakemanscanner.org/docs/warning_types/sql_injection/",
+      "code": "ActiveRecord::Base.connection.execute(\"REFRESH MATERIALIZED VIEW #{view}\")",
+      "render_path": null,
+      "location": {
+        "type": "method",
+        "class": "MeSalva::Content::MaterializedViews",
+        "method": "sql_refresh_for"
+      },
+      "user_input": "view",
+      "confidence": "Medium",
+      "note": ""
+    },
+    {
+      "warning_type": "Cross-Site Request Forgery",
+      "warning_code": 86,
+      "fingerprint": "9e450b4277235e592c083dc95e4902a07537932fa4f1bfb631d7b2438066564d",
+      "check_name": "ForgerySetting",
+      "message": "protect_from_forgery should be configured with 'with: :exception'",
+      "file": "app/controllers/application_controller.rb",
+      "line": 5,
+      "link": "http://brakemanscanner.org/docs/warning_types/cross-site_request_forgery/",
+      "code": "protect_from_forgery(:with => :null_session)",
+      "render_path": null,
+      "location": {
+        "type": "controller",
+        "controller": "ApplicationController"
+      },
+      "user_input": null,
+      "confidence": "Medium",
+      "note": ""
+    },
+    {
+      "warning_type": "SQL Injection",
+      "warning_code": 0,
+      "fingerprint": "f7fb7d8f8b8ff4f2eebe043971c93b98096a541d1ceb2aedb6b6ef805893364e",
+      "check_name": "SQL",
+      "message": "Possible SQL injection",
+      "file": "lib/me_salva/permalinks/validator.rb",
+      "line": 116,
+      "link": "http://brakemanscanner.org/docs/warning_types/sql_injection/",
+      "code": "::Permalink.by_slug(target_permalink).where(\"(#{child_entity_rel_name} != ? OR #{child_entity_rel_name} IS NULL)\", entity.public_send(child_entity_rel_name))",
+      "render_path": null,
+      "location": {
+        "type": "method",
+        "class": "MeSalva::Permalinks::Validator",
+        "method": "find_duplicated_permalinks"
+      },
+      "user_input": "child_entity_rel_name",
+      "confidence": "Weak",
+      "note": ""
+    }
+  ],
+  "updated": "2018-01-18 15:17:55 -0200",
+  "brakeman_version": "4.0.1"
+}

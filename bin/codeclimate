@@ -1,0 +1,18 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+setup = true unless ARGV[0].nil?
+
+if setup
+  system('wget -qO- https://get.docker.com/ | sh') unless system('docker -v')
+  system('sudo usermod -aG docker $(id -u -n)')
+  system('sudo docker pull codeclimate/codeclimate')
+  system('chmod -R o+rwx .') if Dir.pwd.end_with? '/backend-api'
+else
+  sudo = system('docker ps 2> /dev/null > /dev/null') ? '' : 'sudo'
+  system("#{sudo} docker run --interactive --tty --rm \
+                  --env CODECLIMATE_CODE=\"$PWD\" \
+                  --volume \"$PWD\":/code \
+                  --volume /var/run/docker.sock:/var/run/docker.sock \
+                  --volume /tmp/cc:/tmp/cc codeclimate/codeclimate analyze")
+end

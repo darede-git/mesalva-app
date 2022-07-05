@@ -1,0 +1,11 @@
+Description:
+    Generates a new Me Salva! customized controller spec at spec/controllers.
+    Pass the controller name as an argument, either CamelCased or snake_cased.
+    It is possible to pass the attributes arguments as well.
+
+Examples:
+    `bin/rails generate ms_controller_spec Awesome`
+    `bin/rails generate ms_controller_spec Awesome attribute1:string attribute2:integer attribute3:references`
+
+    creates a Me Salva! customized awesome controller spec:
+        spec/controllers/awesome_controller_spec.rb

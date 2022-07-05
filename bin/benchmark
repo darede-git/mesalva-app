@@ -1,0 +1,20 @@
+#!/bin/sh
+set -e
+
+if [[ "$*" == "qa" ]]
+then
+  ab -c 5 -n 1000 -H "Content-type: application/json" http://mesalva-backend-api-qa.herokuapp.com/education_segments
+  exit 0
+fi
+
+if lsof -wni tcp:3001 > /dev/null
+then
+  ab -c 5 -n 1000 -H "Content-type: application/json" http://127.0.0.1:3001/education_segments
+else
+  echo 'Preparing environment for benchmark tests'
+  RAILS_ENV=test bundle exec rake db:integration_reset > /dev/null || { echo 'Database reset failed!' ; exit 1; }
+  RAILS_ENV=test bundle exec rails s -b 127.0.0.1 -p 3001 > /dev/null &
+
+  sleep 5
+  ab -c 5 -n 1000 -H "Content-type: application/json" http://127.0.0.1:3001/education_segments
+fi

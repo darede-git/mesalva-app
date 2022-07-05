@@ -1,0 +1,29 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'base64'
+require 'openssl'
+
+origin = 'https://www.mesalva.com'
+client = 'WEB'
+secret = 'a50c25d8cc814f1a476a1b37c88079fe9077eeaa8de408bdcb16b1d8d8cc9214'
+content_type = 'application/json'
+host = 'http://localhost:3000'
+method = ARGV[0] || 'GET'
+path = ARGV[1] || '/education_segments'
+body = ARGV[2] || ''
+uid = ARGV[3] ? "-H 'uid: #{ARGV[3]}'" : ''
+token = ARGV[4] ? "-H 'access-token: #{ARGV[4]}'" : ''
+allowed = ARGV[5] || 'GET'
+user_auth = "-H 'client: #{client}' #{uid} #{token}"
+date = Time.now.utc.strftime('%a, %d %b %Y %H:%M:%S GMT')
+content_md5 = ARGV[2] ? Digest::MD5.base64digest(body) : ''
+canonical_string = "#{method},#{content_type},#{content_md5},#{path},#{date}"
+ssl = OpenSSL::HMAC.digest('SHA1', secret, canonical_string)
+signature = Base64.strict_encode64(ssl)
+data = ARGV[2] ?  "-d '#{body}'" : ''
+method += " -v -H 'Access-Control-Request-Method: #{allowed}'" if method == 'OPTIONS'
+
+curl = "curl -i -X #{method} #{user_auth} -H 'Origin: #{origin}' -H 'Content-Type: #{content_type}' -H 'Content-MD5: #{content_md5}' -H 'DATE: #{date}' -H 'Authorization: APIAuth #{client}:#{signature}' #{data} #{host + path}"
+puts curl
+system curl

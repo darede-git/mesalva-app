@@ -1,0 +1,18 @@
+Description:
+    Generates a new Me Salva! customized complete scaffold.
+    Pass the entity name as an argument, either CamelCased or snake_cased.
+    It is possible to pass the attributes arguments as well.
+
+Examples:
+    `bin/rails generate ms_scaffold Awesome`
+    `bin/rails generate ms_scaffold Awesome attribute1:string attribute2:integer attribute3:references`
+
+    creates a Me Salva! customized awesome complete scaffold:
+        app/controllers/awesome_controller.rb
+        spec/controllers/awesome_controller_spec.rb
+        add resource_routes at config/routes.rb
+        create the migration at db/migrate
+        app/models/awesome.rb
+        app/serializers/awesome_serializer.rb
+        spec/models/awesome_spec.rb
+        spec/factories/awesome_factory.rb

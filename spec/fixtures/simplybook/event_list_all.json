@@ -1,0 +1,60 @@
+[
+  {
+    "provider": {
+      "email": "contentteacher1@mesalva.com"
+    },
+    "service": {
+      "name": "Mentoring Example 1",
+      "description": ""
+    },
+    "client": {
+      "email": "user1@mesalva.com"
+    },
+    "id": 1,
+    "status": "confirmed",
+    "start_datetime": "2022-02-01 10:10:00"
+  },
+  {
+    "provider": {
+      "email": "contentteacher2@mesalva.com"
+    },
+    "service": {
+      "name": "Mentoring Example 2",
+      "description": ""
+    },
+    "client": {
+      "email": "user2@mesalva.com"
+    },
+    "id": 2,
+    "status": "confirmed",
+    "start_datetime": "2022-02-02 10:10:00"
+  },
+  {
+    "provider": {
+      "email": "contentteacher2@mesalva.com"
+    },
+    "service": {
+      "name": "Mentoring Example 1",
+      "description": ""
+    },
+    "client": {
+      "email": "user1@mesalva.com"
+    },
+    "id": 3,
+    "status": "confirmed",
+    "start_datetime": "2022-02-03 10:10:00"
+  },
+  {
+    "provider": {
+      "email": "contentteacher1@mesalva.com"
+    },
+    "service": {
+      "name": "Mentoring Example 2",
+      "description": ""
+    },
+    "client": null,
+    "id": 4,
+    "status": "confirmed",
+    "start_datetime": "2022-02-04 10:10:00"
+  }
+]

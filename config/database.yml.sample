@@ -1,0 +1,27 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV["WEB_DB_POOL"] || ENV['RAILS_MAX_THREADS'] || 5 %>
+development:
+  <<: *default
+  database: <%= ENV["DATABASE_NAME_DEVELOPMENT"] || ENV["DATABASE_NAME"] %>
+  username: <%= ENV["DATABASE_USERNAME"] %>
+  password: <%= ENV["DATABASE_PASSWORD"] %>
+  host: <%= ENV["DATABASE_HOST"] %>
+test:
+  <<: *default
+  database: <%= ENV["DATABASE_NAME_TEST"] %>
+  username: <%= ENV["DATABASE_USERNAME_TEST"] || ENV["DATABASE_USERNAME"] %>
+  password: <%= ENV["DATABASE_PASSWORD_TEST"] || ENV["DATABASE_PASSWORD"] %>
+  host: <%= ENV["DATABASE_HOST_TEST"] || ENV["DATABASE_HOST"] %>
+
+production:
+  pool: <%= ENV["WEB_DB_POOL"] || ENV['RAILS_MAX_THREADS'] || 5 %>
+  <% unless ENV["DATABASE_URL"].blank? %>
+  url:  <%= ENV["DATABASE_URL"] %>
+  <% else %>
+  database: <%= ENV["DATABASE_NAME"] || ENV["RDS_DB_NAME"] %>
+  username: <%= ENV["DATABASE_USERNAME"] || ENV["RDS_USERNAME"] %>
+  password: <%= ENV["DATABASE_PASSWORD"] || ENV["RDS_PASSWORD"] %>
+  host: <%= ENV["DATABASE_HOST"] || ENV["RDS_HOSTNAME"] %>
+  <% end %>

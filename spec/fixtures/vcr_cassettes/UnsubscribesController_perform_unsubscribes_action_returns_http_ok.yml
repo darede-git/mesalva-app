@@ -1,0 +1,149 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.pagar.me/1/subscriptions/463138
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - pagarme-ruby/2.3.0
+      Content-Type:
+      - application/json; charset=utf8
+      Content-Length:
+      - '2'
+      Authorization:
+      - Basic YWtfdGVzdF83UU1XMjk1WmZ1N1RaSGtjMnRCVzhTaFhBZ3pCNmk6eA==
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 29 Jan 2020 18:38:33 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=dac778df027663f655eb878469252ae3d1580323112; expires=Fri, 28-Feb-20
+        18:38:32 GMT; path=/; domain=.pagar.me; HttpOnly; SameSite=Lax
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type, Authorization, X-Requested-With, X-HTTP-Method-Override
+      Access-Control-Allow-Methods:
+      - GET,PUT,POST,DELETE
+      Access-Control-Allow-Origin:
+      - "*"
+      Charset:
+      - utf-8
+      Etag:
+      - W/"e3c-tyoCzUPlv/atazk7Kvcg3lDIlWE"
+      X-Ratelimit-Limit:
+      - '30'
+      X-Ratelimit-Remaining:
+      - '29'
+      X-Ratelimit-Reset:
+      - '1580323114'
+      X-Response-Time:
+      - 39.897ms
+      X-Request-Id:
+      - 8e224755-2ee9-4354-99fc-5d1cbd6c43d3
+      Strict-Transport-Security:
+      - max-age=300; includeSubDomains
+      Cf-Cache-Status:
+      - DYNAMIC
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 55cd52df2f22f667-GRU
+      Content-Encoding:
+      - gzip
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA+xX747bNgx/lYz76iT+EyexgWErtq7ogCtuvWvRbSgMRmISXWzJleT07op7mn3Yg/TFBsmO46R3WLfPAwo0JimKIn/8kfcJ1OqGmIUcTLMyTIvaCiUhgLpECfmno94LAhAc8mgRRWkcAFaqkRbyWZaFAXC8M5AnYQASK4IcLkuUanRB0mAJAVgtsCxaK29uqWCa0BKHHOIwWozD+TgJr6NlHs3yeD5ZhvPfXSh4V5G0RUV2q7iB/A9YqZKsggCYJi5swVBzeB8AU6XSkMumLANgW9QbModPIY3FsnSuDOSRE+yVYFRoqoTk1J873McJeSkkFZ2jQkhLeo9la/jQJmM2T6JkGQBrtHanrEZpkPk0DvM3lAdgLNrGuLSi4BCApnVjXCho3Lk2kNaoFwKyD43QpCHofxaaTK2koYIp7pIehmE41He1qHGDuqKhxgUP6ZISSonmsxSj2Wy5SGYr5IvYGTZ2q7S4Rxfywf08CbOli1+tXYJaxBxTbp3TxSKOkjALQJpm8PVFweNwHEbjOHMFT5Z5Ek3ScOEK7i2bmj9pGU/Chbc8ReAhYuLFqcIl+UzkEi75wDJ8DCHD1zBlLOSx+4WaF1tV8mN+3xjSo2syFjp1icYWXGyEcwVRFEUHzVrooWoWDZUrjdK9eS8MHmS1kEXl09/h2gkr3BirRU3FGstyhWwH+RpLQwGwfeXO9N+1MtYZFI0uzzHe9hTkJ43krqhto+moJqaqijTzCJJWrDU2vDBM6T6stieHl3SSFWo2CL+T0m0tdIstV+iDVtOaHMRzwFoUO7pznFO7FC6zSRTFk1k2iWKHzyFhFcNOrMgiR4uu/VYotFaQw4UScqvMiNPoLcmWO8j5zaLMwct3DRMcPcwvlbZq9KykjXYvZqqqS6r8uRySMG5BimOOY6fTeAbTtAN0HEXjMMm9czIWuTv/+goCKNVGI1eND+51g6NL5JpGP25xgwYCkMrj6oJGV1ju8Rsnaipy5ossgFor3ljV3e7dPpdUja6oImM1lg5RlqpajTmNeaPx81+f/1RjrsbdUcjnATSmI4LkYVjXQQYfDiWRjHw5ujpx2gvWV61UDMsh9XmnJzpR9dbtJUztSbsG72DaSjWJatVoQ/15pXkXZIcQYXZFSXsqIYdG7qT6KD2DMhK1fQTkh0/kXLS03D1BGNb2fmeuxd4xT4krOnL8affA1to6n07DZYrrdJlO5Ear3UQo+IqeeqK/H6eKbpzUpIXihbGo7ROsOWu58OwEySN3xuN4+aX9YTyGT9L5+ZT6RwqPJ+H8qym8tay3StLppuElAXAu3IRK/U8/rKK2C1aeH7Iscv+irNtK0iRMZrMHX2dNxpz4PMjcmzSRfbzpjn2O+q7v9PZE0V+8cDdKEpvtSumt8qV+jF6EvRsmsof/vai7aeq5p6Meh0TdH3APitPlPPUvYo2xqnKXD57UCzvrebJIk0UAdGtJSywHLWPv6uP0OL2IK9Z41B7zupwlaTpPw9C9s9e3PoDVa+g3vCE7UYXCNYj//wdLxtKEqepQ4c6/OU4BLQvse28ltN1y7MPa0HAj+4rVYZa0uOvCdVvi+4e2wU6z1jajX35897Gb+a2pdnMZxpFW2Zzuw7utCBc7eGJHXfp7525HTRaT2fJxvH9pucgiZ3nGAE+vEU/tCY/TxaGq8ObVy+vnP42urp9dP7/ybuSGdK2F9M+/SVcfZ0woB7vwJk5ubtNyHrIPEMAeS5cWqxtyKDobzxDFcQoP/4/X/zpeDVlbEi/O/iypUOKGCqt25HZ81zjFyWqjd5fZh/D2ni5eLN+8e/dS/Br98nOW/vbqxUuq3kLv4TifTD6d+oV/UtH0QBNm+u106NdM233pe3/zd//63oe/AQAA//8DADqgE488DgAA
+    http_version: 
+  recorded_at: Wed, 29 Jan 2020 18:38:33 GMT
+- request:
+    method: post
+    uri: https://api.pagar.me/1/subscriptions/463138/cancel
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - pagarme-ruby/2.3.0
+      Content-Type:
+      - application/json; charset=utf8
+      Content-Length:
+      - '2'
+      Authorization:
+      - Basic YWtfdGVzdF83UU1XMjk1WmZ1N1RaSGtjMnRCVzhTaFhBZ3pCNmk6eA==
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 29 Jan 2020 18:38:33 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d18b7424d17e71043270e7161b684a72f1580323113; expires=Fri, 28-Feb-20
+        18:38:33 GMT; path=/; domain=.pagar.me; HttpOnly; SameSite=Lax
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type, Authorization, X-Requested-With, X-HTTP-Method-Override
+      Access-Control-Allow-Methods:
+      - GET,PUT,POST,DELETE
+      Access-Control-Allow-Origin:
+      - "*"
+      Charset:
+      - utf-8
+      Etag:
+      - W/"e40-KptZQN92YxANR4xsGURjOmgXQPE"
+      Vary:
+      - X-HTTP-Method-Override
+      X-Response-Time:
+      - 292.716ms
+      X-Request-Id:
+      - 4285a7b0-37da-4770-8001-cebeac836c2d
+      Strict-Transport-Security:
+      - max-age=300; includeSubDomains
+      Cf-Cache-Status:
+      - DYNAMIC
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 55cd52e12b70cff0-GRU
+      Content-Encoding:
+      - gzip
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA+xXbY/bNgz+Kxn31cn5JU5sA8M2bN3QAS263XXYCwaDkZhEF1lyJTm763C/Zh/2Q/bHBsmO41zvgG6fBxRoTFIURT58yPsD9OaWmIMKbLexzIjWCa0gglaiguqPsz4IIhAcqmSdJHkaATa6Uw6qZVnGEXC8t1BlcQQKG4IK3khUevaKlEUJETgjUNa9VTB3VDND6IhDBWmcrOfxap7FN0lRJcsqXS2KePWLDwXvG1KubsjtNbdQ/QobLclpiIAZ4sLVDA2H3yJgWmoDleqkjIDt0ezInj6Fsg6l9K4sVIkXHLVgVBtqhOI0njvdxwm5FIrqwVEtlCNzRNkbPvTJWK6yJCsiYJ0x/pQzqCyykMZp/qbyCKxD11mfVhQcIjC07awPBa0/1wfSG41CQPauE4YMROPP2pBttbJUM8190uM4jqf6oRYt7tA0NNX44CEvKKOcaLXMMVkui3W23CBfp96wc3ttxHv0IZ/cr7K4LHz8eusT1CPmnHLnna7XaZLFZQTKdpOvDwqexvM4maelL3hWVFmyyOO1L3iw7Fr+rGW6iNfB8hKBp4iJ15cKn+RHIp9wxSeW8VMImb6GaeugSv0vNLzea8nP+X1rycxuyDoY1BKtq7nYCe8KkiRJTpqtMFPVMpkqNwaVf/NRWDzJWqHqJqR/wLUXNrizzoiW6i1KuUF2gGqL0lIE7Nj4M+N3q63zBnVn5GOM9z0F1UUj+Sta1xk6q4nppiHDAoKUE1uDHa8t02YMq+/J6SWDZIOGTcIfpHTXCtNjyxf6pDW0JQ/xCrAV9YHuPee0PoVFuUiSdLEsF0nq8TklrHraiQ055OjQt98GhTEaKnilhdprO+M0+5FUzx3k/ZZJ6eEVuoYJjgHmb7RxevalpJ3xL2a6aSU14VwFWZz2IMU5x7nXGXwE03wAdJok8zirgnOyDrk//8M1RCD1ziDXXQjuhw5nb5Abmn21xx1aiEDpgKtXNLtGecRPvKhryJuvywhao3nn9HB7cPtCUTO7poasMyg9ohw1rZ5zmvPO4N9//f2nnnM9H45CtYqgswMRZA/Tuk4y+HAqiWIUyjHUidNRsLFqUjOUU+oLTi90ohmt+0uYPpLxDT7AtJcaEs2mM5bG89rwIcgBIcIeaklHklBBpw5K/64CgzISrXsC5KdP5Fz0tDw8QVjW9/5gbsTRM4/EDZ05/rJ7YO9cW11dxUWO27zIF2pn9GEhNHxETz3T309TxTBOWjJC89o6NO4Z1lz2XPjoBKkzd6bztPjQ/jQe42fpfJxSDBUjSRw+gsbTRbz6OBrPFmlWhAm/14out40giYBz4adUHn6GgZX0nbAJHFGWif+XlMNmkmdxtlw+hFobsvbC50nm32WI3NONd+51NPdjt/cn6vHitb9RkdjtN9rsdSj3UxQj3P00mWMLvBftMFED/wz049FoxgP+QWlerPLwItZZpxt/+eRJo3CwXmXrPFtHQHeOjEI5aRt3354nyOVFXLMuIPec12KZ5fkqj2P/zlHf+wDWbmHc8qYMRQ0K3yTh/y8cWUcLpptThQf/9jwJjKpx7L+NMG7PcQxrR9Ot7CPWh2XW424I12+Kvz30TXaZtb4hwwIUOpDdru5sc1ipOE2MLlf0Pr7fi3h9gGf21CLcu/J7arZeLIun8f6h5bpMvOUjFnh+lXhuV3iaMk5VhbevX968+Hp2ffPlzYvr4EbtyLRGqPD823zz+5IJ7WEX36bZ7V0uVzF7BxEcUfq0ONORR9GjEQ1Jmubw8P+I/a8j1pJzknj96E+TBhXuqHb6QH7P941TX6w35vCmfBffvadX3xZvf/rppfg++e6bMv/59bcvqfkRRg/nGWWrq6uw9C8aujrRhL369Grq1171O9Pn4ebP/vW9D/8AAAD//wMA7vurhEAOAAA=
+    http_version: 
+  recorded_at: Wed, 29 Jan 2020 18:38:33 GMT
+recorded_with: VCR 5.0.0

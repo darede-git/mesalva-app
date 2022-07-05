@@ -1,0 +1,9 @@
+# frozen_string_literal: true
+
+require 'rails_helper'
+
+RSpec.describe <%= controller_class_name.singularize %>, type: :model do
+<%= "  context 'validations' do\n" if references? -%>
+<% references_count.times do |index| -%>    it { should belong_to(<%= ":#{references_format(index)}) }#{line_break_for_loop(references_count, index)}" -%><% end -%>
+<%= "\n  end\n" if references? -%>
+end

@@ -1,0 +1,11 @@
+Description:
+    Generates a new Me Salva! customized serializer at app/serializers.
+    Pass the serializer name as an argument, either CamelCased or snake_cased.
+    It is possible to pass the attributes arguments as well.
+
+Example:
+    `bin/rails generate ms_serializer Awesome`
+    `bin/rails generate ms_serializer Awesome attribute1:string attribute2:integer attribute3:references`
+
+    creates a Me Salva! customized awesome serializer:
+        app/serializers/awesome_serializer.rb

@@ -1,0 +1,57 @@
+#!/bin/bash
+
+if ! test -f "report.md"; then
+  echo "report.md doesn't exist, integration tests failed?"
+  exit -1
+fi
+
+if test -f "routes.txt" || test -f "integration_results.txt"; then
+  echo "routes.txt or integration_results.txt exists. Removing..."
+  rm 'routes.txt'
+  rm 'integration_results.txt'
+fi
+
+echo 'Running coverage report'
+bundle exec rails routes | grep -Po "(PUT|POST|GET|DELETE|PATCH)+ +[/_a-z:]*" > routes.txt
+grep -Po '(Fail:|Pass:) (?!OPTIONS)[A-z :()0-9/_]*' report.md > integration_results.txt
+
+total_routes=$(wc -l routes.txt|grep -Pio '\d*')
+
+if [ ! $total_routes ]; then
+  exit 0
+fi
+
+covered_routes=0
+failing_routes_count=0
+result=""
+
+echo "Running integration coverage report, total routes: $total_routes"
+
+while read p; do
+  method=$(echo $p|grep -Po "[A-Z]*")
+  route=$(echo $p|grep -Po "[a-z/_:]*")
+
+  if $(echo $route|grep -Po ":"); then
+    route=$(echo $route|sed -e 's/:[a-z_]*/[A-z0-9_]+/g')
+    result=$(grep -Po "(Fail:|Pass:) $method \(\d\d\d\) $route" integration_results.txt)
+  else
+    result=$(grep -Po "(Fail:|Pass:) $method \(\d\d\d\) $route(?!/)" integration_results.txt)
+  fi
+
+  if [ -z "$result" ] ;then
+    if [ $(echo $result|grep -Pco 'Pass') ] ; then
+      covered_routes=$(($covered_routes+1))
+    else
+      failing_routes_count=$(($failing_routes_count+1))
+    fi
+  fi
+done < routes.txt
+
+echo "Total Routes: $total_routes"
+echo "Covered routes: $covered_routes"
+echo "Percentage of covered rotes:$(( ($covered_routes * 100)/$total_routes ))%"
+echo "Covered failing route count: $failing_routes_count tests"
+
+rm './routes.txt'
+rm './integration_results.txt'
+rm './report.md'

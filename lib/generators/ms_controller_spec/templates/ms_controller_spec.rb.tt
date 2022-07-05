@@ -1,0 +1,84 @@
+# frozen_string_literal: true
+
+require 'rails_helper'
+
+RSpec.describe <%= controller_class_name %>Controller, type: :controller do
+  include PermissionHelper
+
+  let(:default_serializer) { V2::<%= controller_class_name.singularize %>Serializer }
+
+  context 'as user' do
+    before { user_session }
+
+    context '#index' do
+      context 'with permission' do
+        before { grant_test_permission('index') }
+        context 'with valid <%= plural_table_name.downcase %>' do
+          let!(:<%= singular_table_name.downcase %>1) { create(:<%= singular_table_name.downcase %>) }
+          let!(:<%= singular_table_name.downcase %>2) { create(:<%= singular_table_name.downcase %>) }
+          it 'returns <%= plural_table_name.downcase %>' do
+            get :index
+            assert_apiv2_response(:ok, [<%= singular_table_name.downcase %>1, <%= singular_table_name.downcase %>2], default_serializer)
+          end
+        end
+      end
+    end
+
+    context '#show' do
+      context 'with permission' do
+        before { grant_test_permission('show') }
+        context 'with a valid <%= singular_table_name.downcase %>' do
+          let!(:<%= singular_table_name.downcase %>) { create(:<%= singular_table_name.downcase %>) }
+          it 'returns <%= singular_table_name.downcase %>' do
+            get :show, params: { id: <%= singular_table_name.downcase %>.id }
+            assert_apiv2_response(:ok, <%= singular_table_name.downcase %>, default_serializer)
+          end
+        end
+      end
+    end
+
+    context '#update' do
+      context 'with permission' do
+        before { grant_test_permission('update') }
+        context 'with a valid <%= singular_table_name.downcase %>' do
+          let!(:<%= singular_table_name.downcase %>) { create(:<%= singular_table_name.downcase %>) }
+          it 'returns a serializad <%= singular_table_name.downcase %> json' do
+            put :update, params: { id: <%= singular_table_name.downcase %>.id, field: 'new_value' }
+            assert_apiv2_response(:ok, <%= singular_table_name.downcase %>.reload, default_serializer)
+            expect(<%= singular_table_name.downcase %>.field).to eq('new_value')
+          end
+        end
+      end
+    end
+
+    context '#create' do
+      context 'with permission' do
+        before { grant_test_permission('create') }
+        let!(:valid_attributes) { attributes_for(:<%= singular_table_name.downcase %>) }
+        context 'with valid params' do
+          it 'creates a <%= singular_table_name.downcase %>' do
+            expect do
+              post :create, params: valid_attributes
+            end.to change(<%= controller_class_name.singularize %>, :count).by(1)
+
+            assert_apiv2_response(:created, <%= controller_class_name.singularize %>.last, default_serializer)
+          end
+        end
+      end
+    end
+
+    context '#destroy' do
+      context 'with permission' do
+        before { grant_test_permission('destroy') }
+        context 'with a valid <%= singular_table_name.downcase %>' do
+          let!(:<%= singular_table_name.downcase %>) { create(:<%= singular_table_name.downcase %>) }
+          it 'destroy a <%= singular_table_name.downcase %>' do
+            expect do
+              delete :destroy, params: { id: <%= singular_table_name.downcase %>.id }
+            end.to change(<%= controller_class_name.singularize %>, :count).by(-1)
+          end
+        end
+      end
+    end
+  end
+end

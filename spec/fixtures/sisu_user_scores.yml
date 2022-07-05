@@ -1,0 +1,104 @@
+ufc:
+  initials: UFC
+  ies: UNIVERSIDADE FEDERAL DO CEARÁ
+  college: ''
+  course: CIÊNCIA DA COMPUTAÇÃO
+  grade: Bacharelado
+  shift: Integral
+  modality: Ampla Concorrência
+  semester: '1'
+  cnat_weight: 1.0
+  chum_weight: 1.0
+  ling_weight: 1.0
+  mat_weight: 1.0
+  red_weight: 1.0
+  cnat_score: 600.0
+  chum_score: 600.0
+  ling_score: 650.0
+  mat_score: 750.0
+  red_score: 700.0
+  cnat_avg: 600.0
+  chum_avg: 600.0
+  ling_avg: 650.0
+  mat_avg: 750.0
+  red_avg: 700.0
+  passing_score: '641.02'
+  approval_prospect: '18.98'
+  average: '660.00'
+  chances: true
+  trans: false
+  indigena: false
+  deficiencia: false
+  publica: false
+  carente: false
+  afro: false
+
+ifce:
+  initials: IFCE
+  ies: INSTITUTO FEDERAL DE EDUCAÇÃO, CIÊNCIA E TECNOLOGIA DO CEARÁ
+  college: Campus de Aracati
+  course: CIÊNCIA DA COMPUTAÇÃO
+  grade: Bacharelado
+  shift: Integral
+  modality: Ampla Concorrência
+  semester: '1'
+  cnat_weight: 2.0
+  chum_weight: 1.0
+  ling_weight: 2.0
+  mat_weight: 2.0
+  red_weight: 2.0
+  cnat_score: 600.0
+  chum_score: 600.0
+  ling_score: 650.0
+  mat_score: 750.0
+  red_score: 700.0
+  cnat_avg: 1200.0
+  chum_avg: 600.0
+  ling_avg: 1300.0
+  mat_avg: 1500.0
+  red_avg: 1400.0
+  passing_score: '810.51'
+  approval_prospect: '-143.84'
+  average: '666.67'
+  chances: false
+  trans: false
+  indigena: false
+  deficiencia: false
+  publica: false
+  carente: false
+  afro: false
+
+cefet:
+  initials: "CEFET/RJ"
+  ies: "CENTRO FEDERAL DE EDUCAÇÃO TECNOLÓGICA CELSO SUCKOW DA FONSECA"
+  college: ""
+  course: "ADMINISTRAÇÃO"
+  grade: "Bacharelado"
+  shift: "Noturno"
+  modality: "Ampla Concorrência"
+  semester: "1"
+  cnat_weight: 1.0
+  chum_weight: 1.0
+  ling_weight: 1.0
+  mat_weight: 1.0
+  red_weight: 1.0
+  cnat_score: 500.0
+  chum_score: 500.0
+  ling_score: 500.0
+  mat_score: 500.0
+  red_score: 500.0
+  cnat_avg: 500.0
+  chum_avg: 500.0
+  ling_avg: 500.0
+  mat_avg: 500.0
+  red_avg: 500.0
+  passing_score: "674.24"
+  approval_prospect: '-174.24'
+  average: "500.00"
+  chances: false
+  trans: false
+  indigena: false
+  deficiencia: false
+  publica: false
+  carente: false
+  afro: false

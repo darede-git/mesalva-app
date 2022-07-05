@@ -1,0 +1,7 @@
+# frozen_string_literal: true
+
+class <%= controller_class_name.singularize %> < ActiveRecord::Base
+include CommonModelScopes
+
+<% references_count.times do |index| -%>  belongs_to <%= ":#{references_format(index)}#{line_break_for_loop(references_count, index)}" -%><% end -%>
+<%= references? ? "\nend" : "end" %>

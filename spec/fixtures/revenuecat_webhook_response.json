@@ -1,0 +1,31 @@
+{
+    "event": {
+      "event_timestamp_ms": 1622317245150,
+      "product_id": "test_product",
+      "period_type": "NORMAL",
+      "purchased_at_ms": 1622317245150,
+      "expiration_at_ms": 1622324445150,
+      "environment": "SANDBOX",
+      "entitlement_id": null,
+      "entitlement_ids": null,
+      "presented_offering_id": null,
+      "transaction_id": null,
+      "original_transaction_id": null,
+      "is_family_share": null,
+      "app_user_id": "72fef986-5475-4d7a-a78e-2f3cac0ee7c2",
+      "aliases": [
+        "72fef986-5475-4d7a-a78e-2f3cac0ee7c2",
+        "651e5b1c-e939-4d32-89d6-a1558195c06c"
+      ],
+      "original_app_user_id": "72fef986-5475-4d7a-a78e-2f3cac0ee7c2",
+      "currency": null,
+      "price": null,
+      "price_in_purchased_currency": null,
+      "subscriber_attributes": null,
+      "store": "PLAY_STORE",
+      "takehome_percentage": null,
+      "type": "TEST",
+      "id": "AC4C43F8-3EEC-44B0-9B7D-9BA35A516768"
+    },
+    "api_version": "1.0"
+  }

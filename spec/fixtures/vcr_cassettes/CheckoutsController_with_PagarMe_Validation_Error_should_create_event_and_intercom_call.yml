@@ -1,0 +1,68 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.pagar.me/1/transactions
+    body:
+      encoding: UTF-8
+      string: '{"amount":1000,"postback_url":"http://085af585.ngrok.io","customer":{"name":"Me
+        Salva!","document_number":"98435565009","email":"email@teste.com","phone":{"ddd":"51","number":"991991919"},"address":{"street":"Rua
+        Padre Chagas","neighborhood":"Moinhos de Vento","zipcode":"91920-000","street_number":79,"complementary":"302"}},"metadata":{"user_id":8,"nome":"Me
+        Salva!","logradouro":"Rua Padre Chagas","numero":79,"complemento":"302","bairro":"Moinhos
+        de Vento","cidade":"Porto Alegre","estado":"RS","cep":"91920-000","produto-comprado":"Enem
+        Semestral8","tempo-de-duração-do-produto":6,"data-da-compra":"2020-01-29T15:36:46.458-03:00"},"installments":1,"async":true,"card_id":"invalid","payment_method":"credit_card","status":"local","card_expiration_date":""}'
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - pagarme-ruby/2.3.0
+      Content-Type:
+      - application/json; charset=utf8
+      Content-Length:
+      - '762'
+      Authorization:
+      - Basic YWtfdGVzdF83UU1XMjk1WmZ1N1RaSGtjMnRCVzhTaFhBZ3pCNmk6eA==
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Date:
+      - Wed, 29 Jan 2020 18:36:52 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '134'
+      Connection:
+      - keep-alive
+      Server:
+      - openresty
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type, Authorization, X-Requested-With, X-HTTP-Method-Override
+      Access-Control-Allow-Methods:
+      - GET,PUT,POST,DELETE
+      Access-Control-Allow-Origin:
+      - "*"
+      Charset:
+      - utf-8
+      Etag:
+      - W/"86-1KWHNSKCzr/uHZyAQWLvKm9FIsw"
+      Vary:
+      - X-HTTP-Method-Override
+      X-Pagarme-Version:
+      - '2017-07-17'
+      X-Response-Time:
+      - 13.114ms
+      Strict-Transport-Security:
+      - max-age=300; includeSubDomains
+    body:
+      encoding: UTF-8
+      string: '{"errors":[{"type":"invalid_parameter","parameter_name":"card_id","message":"Card
+        not found."}],"url":"/transactions","method":"post"}'
+    http_version: 
+  recorded_at: Wed, 29 Jan 2020 18:36:52 GMT
+recorded_with: VCR 5.0.0

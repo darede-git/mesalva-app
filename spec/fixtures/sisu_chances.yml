@@ -1,0 +1,32 @@
+ufc:
+  initials: UFC
+  ies: UNIVERSIDADE FEDERAL DO CEARÁ
+  college: ''
+  course: CIÊNCIA DA COMPUTAÇÃO
+  grade: Bacharelado
+  shift: Integral
+  modality: Ampla Concorrência
+  semester: '1'
+  passing_score: '641,02'
+
+ifce:
+  initials: IFCE
+  ies: INSTITUTO FEDERAL DE EDUCAÇÃO, CIÊNCIA E TECNOLOGIA DO CEARÁ
+  college: Campus de Aracati
+  course: CIÊNCIA DA COMPUTAÇÃO
+  grade: Bacharelado
+  shift: Integral
+  modality: Ampla Concorrência
+  semester: '1'
+  passing_score: '810,51'
+
+cefet:
+  initials: "CEFET/RJ"
+  ies: "CENTRO FEDERAL DE EDUCAÇÃO TECNOLÓGICA CELSO SUCKOW DA FONSECA"
+  college: ""
+  course: "ADMINISTRAÇÃO"
+  grade: "Bacharelado"
+  shift: "Noturno"
+  modality: "Ampla Concorrência"
+  semester: "1"
+  passing_score: "674,24"

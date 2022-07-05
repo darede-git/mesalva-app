@@ -1,0 +1,5 @@
+# frozen_string_literal: true
+
+class V2::<%= controller_class_name.singularize %>Serializer < V3::BaseSerializer
+  attributes <%= args_to_symbols %>
+end

@@ -1,0 +1,161 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.pagar.me/1/transactions
+    body:
+      encoding: UTF-8
+      string: '{"amount":900,"postback_url":"http://085af585.ngrok.io","customer":{"external_id":"user32@mesalva.com","type":"individual","country":"br","name":"Me
+        Salva!","documents":[{"type":"cpf","number":"98435565009"}],"email":"email@teste.com","birthday":"1969-12-31","phone_numbers":["+5551991991919"]},"billing":{"name":"default","address":{"neighborhood":"Moinhos
+        de Vento","zipcode":"91920000","city":"Porto Alegre","state":"RS","complementary":"302","country":"br","street":"Rua
+        Padre Chagas","street_number":"79"}},"items":[{"id":"38","title":"Enem Semestral38","unit_price":374,"quantity":1,"tangible":false,"category":"enem-semestral"},{"id":"39","title":"Enem
+        Semestral39","unit_price":300,"quantity":1,"tangible":false,"category":"enem-semestral"},{"id":"40","title":"Enem
+        Semestral40","unit_price":225,"quantity":1,"tangible":false,"category":"enem-semestral"}],"metadata":{"user_id":32,"nome":"Me
+        Salva!","logradouro":"Rua Padre Chagas","numero":79,"complemento":"302","bairro":"Moinhos
+        de Vento","cidade":"Porto Alegre","estado":"RS","cep":"91920-000","produto-comprado":"Enem
+        Semestral38","tempo-de-duração-do-produto":6,"order-id":25,"data-da-compra":"2022-03-31
+        11:12:22 -0300"},"payment_method":"credit_card","installments":1,"async":true,"card_id":"card_ckljewknk0iyn0i9t63o9h49m","capture":false,"status":"local","card_expiration_date":""}'
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - pagarme-ruby/2.3.0
+      Content-Type:
+      - application/json; charset=utf8
+      Content-Length:
+      - '1351'
+      Authorization:
+      - Basic YWtfdGVzdF83UU1XMjk1WmZ1N1RaSGtjMnRCVzhTaFhBZ3pCNmk6eA==
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 31 Mar 2022 14:12:24 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Headers:
+      - Content-Type, Authorization, X-Requested-With, X-HTTP-Method-Override
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Charset:
+      - utf-8
+      Access-Control-Allow-Methods:
+      - GET,PUT,POST,DELETE
+      X-Pagarme-Version:
+      - '2019-09-01'
+      Etag:
+      - W/"ca5-rPwNpPb8XShX1OuAWbdNure2xIc"
+      X-Response-Time:
+      - 207.936ms
+      Vary:
+      - X-HTTP-Method-Override
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Request-Id:
+      - ea27cb77-c8ca-4eef-bd5f-4cf3065c3252
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Cf-Cache-Status:
+      - DYNAMIC
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 6f49ae037af9520b-GRU
+      Content-Encoding:
+      - gzip
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA7xX247bNhD9FZevlRxdbUtPCdoU6EOKILvtQ4pAoMmxxTVFanlxdhPs1/ShH5IfK4aWZHkvSF9awIDN4XB45nBu/kr09gaYIzVxhipLmRNakYhYR523pCa90QysFWpPImJg5y00BqjVitTKSzmqTkJC2a0XBgyJpp+NAdtrZaFhmsN48OluB9bS/VMFRbunQsEnkXetNuILRfAXV1i9cw0Hy4zonTaj2J3PKuvHn5w6aJgB6oCTmmRJlsVJHufpdVrUaVZnxbLIy49k0PQ9/74m7bRXjtRVkpxxAm9GeRKRnoqLNZKs+KWOUNZRKTtQzpI6jQg6kK7KskqKMiJM25Meo4Y3rZZ8Io2806ZvwdvFL8K2W28UkEFPUusaLvYCbZI0TdNxZyfMfKtI55tbQxV6fRSWjrJeqKab8R6EHd1bZ0QPzY5KuaXsQOodlRYiwo4dnpnWvbYOFRpvJKlJ61xfv3qVbEq6KzflUu2NPiyFJsjWPbLQdOBajTCYAS5cgzcGNL3zBs7bwHTXgWHoNVVO7Az1vLFMmwnsVktw+nT1hWRLzTyYBinc9cKcQg0D4HJ3XBnYAeZATWgvmgPck4iIHmnerJd5sUzXy7TIMdH89hSdaO8cln2r1TnkOTdg7USut053aPzrOX0n4Sk2NuuyWpVpRODOgVFUBtvEWzB59roDS+WRLpnuSETcfY+BIhQXR8E9lcgjhp65JzXZokmumQ+0K99tYcqjSTyYYP2ORGQMPFhc4S0/kIhARwU+bPh+7cA6GC4Pjg5mLan/JD+WZZlWVfikFfmEzBrVUDcRLYxrOUVsabWq4jSLcwzOPSg+g/b9ZM436ceZb3j7jNBRPBCK64bJdJe5jWyTZPclaSt3n6/6dVfen1kcKBhoItWmyMtyVSZJRR4+RYRJgXxZodj0vEbYQ4PsMzrVqAf0U0osu/NXHmUnTEWSrvJ1OTHOYUe9RMRTxMzOjjKs2AYARR88Xbyn3MDip5buqQ0P3/US0HEanj9PsunE9PpkXaGTIPbtVptWh0x7p4VqtV1wWPwBymGyMuHQxnttnF68kbA3MPQWhPvhikTki+hPOUaqtMqSJEmeRh/6us6rosqzh4eI2Fb0fWDmxJ9w0D16PBSND1egRSecxEveKugWV9CBdYbKsOWVcE1vBD5IlpURufVYKBB5igXFwV4HLKCgi+14Fo1StRdbtDuUsSMoD/MIHB/zBWh59SK0sDWHlmMH+R+hbV6GtnkMbV38F9A+nfrIZZk7lfkAMTQZdpA38PmgDom4V4mo3CrXVVtUHXmuBqRxksVZcY0FYFUX2XKdvNDQn2hW+Ro1H3W/f9FrX2qmz7ffKfJ//+3X67c/L66u31y/vQpm1B5Mb4QKPNyU288FExozJrnJ8pu7Uq4SdksicqQS+XHGA9b/R92KpGmWE0yjXgrXGC9h6iwdOMqpo0j5lgpj9At5Df2YsPGQsYLTkMWPcv1cTvRUTPCGmNMY9wy9KM6LNA3FOVvESR4Mg3WU67FaSL03lGsfgD1TvZR+0nqU7wDV11VEtOFgYiQH87w3mnunBxzhkmcC3UHX65hDzL2h3/7+9peOuY6Hs6ReRaGphvaaZw/zIWPG5sM4ESgGYRoYox2O4twIpGZUNrNBfDYQDHviPAifLmH6CAaDdkimk9SA6LbeWJjOB9dn9kLTkXAEbMteHZT+rMKEz0D0bj4MDRPXbBgR4U/C6IKw7DSnDupGHDGbJN3C2Ya4a05UnNe35mJUR9Gzo9XDPwAAAP//AwAfzGwfpQwAAA==
+    http_version: 
+  recorded_at: Thu, 31 Mar 2022 14:12:22 GMT
+- request:
+    method: post
+    uri: https://api.pagar.me/1/transactions
+    body:
+      encoding: UTF-8
+      string: '{"amount":1500,"postback_url":"http://085af585.ngrok.io","customer":{"external_id":"user32@mesalva.com","type":"individual","country":"br","name":"Me
+        Salva!","documents":[{"type":"cpf","number":"98435565009"}],"email":"email@teste.com","birthday":"1969-12-31","phone_numbers":["+5551991991919"]},"billing":{"name":"default","address":{"neighborhood":"Moinhos
+        de Vento","zipcode":"91920000","city":"Porto Alegre","state":"RS","complementary":"302","country":"br","street":"Rua
+        Padre Chagas","street_number":"79"}},"items":[{"id":"38","title":"Enem Semestral38","unit_price":625,"quantity":1,"tangible":false,"category":"enem-semestral"},{"id":"39","title":"Enem
+        Semestral39","unit_price":500,"quantity":1,"tangible":false,"category":"enem-semestral"},{"id":"40","title":"Enem
+        Semestral40","unit_price":375,"quantity":1,"tangible":false,"category":"enem-semestral"}],"metadata":{"user_id":32,"nome":"Me
+        Salva!","logradouro":"Rua Padre Chagas","numero":79,"complemento":"302","bairro":"Moinhos
+        de Vento","cidade":"Porto Alegre","estado":"RS","cep":"91920-000","produto-comprado":"Enem
+        Semestral38","tempo-de-duração-do-produto":6,"order-id":25,"data-da-compra":"2022-03-31
+        11:12:22 -0300"},"payment_method":"credit_card","installments":1,"async":true,"card_id":"card_ckljewknk0iyn0i9t63o9h49m","capture":false,"status":"local","card_expiration_date":""}'
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - pagarme-ruby/2.3.0
+      Content-Type:
+      - application/json; charset=utf8
+      Content-Length:
+      - '1352'
+      Authorization:
+      - Basic YWtfdGVzdF83UU1XMjk1WmZ1N1RaSGtjMnRCVzhTaFhBZ3pCNmk6eA==
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 31 Mar 2022 14:12:25 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Charset:
+      - utf-8
+      X-Pagarme-Version:
+      - '2019-09-01'
+      Etag:
+      - W/"ca6-bnxOnT3jPTQqAZ28RafE+Qe/J98"
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Response-Time:
+      - 168.692ms
+      Vary:
+      - X-HTTP-Method-Override
+      Access-Control-Allow-Methods:
+      - GET,PUT,POST,DELETE
+      Access-Control-Allow-Headers:
+      - Content-Type, Authorization, X-Requested-With, X-HTTP-Method-Override
+      X-Request-Id:
+      - 9f8a9737-058d-454b-b34f-2db0c094eda5
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Cf-Cache-Status:
+      - DYNAMIC
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 6f49ae066eaa520b-GRU
+      Content-Encoding:
+      - gzip
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA7xX247bNhD9FZevlRxdbUtPCdoU6EOKILvtQ4pAoMixzTVFanlxdhPs1/ShH5IfK4aWZHkvSF9aYIFdzQyHZw7ntl+Jbm+AOVITZ6iylDmhFYmIddR5S2rSG83AWqF2JCIGtt5CY4BarUitvJSj6SQklN16YcCQaPqzMWB7rSw0THMYDz7VdmAt3T01ULR7KhR8Enm310Z8oQj+4gqrt67hYJkRvdNmFLvzWWX9+CenDhpmgDrgpCZZkmVxksd5ep0WdZrVWbGskvQjGSx9z79vSTvtlSN1WibJGSjwZlQkEempuPhGlhW/tBHKOiplB8pZUqcRwQjSVVlWSbGKCNP2ZMeo4c1eSz6xRt5p0+/B28Uvwu5bbxSQwU5S6xoudgJ9kjRN01GzFWauKtK5sjVUYdhHYeko64VquhnxQdjRnXVG9NBsqZQtZQdSb6m0EBF27PDM9N1r69Cg8UaSmuyd6+tXr5JNSbflplyqndGHpdAE2bpHFpoO3F4jDGaAC9fgjQFN77yBsxqY7jowDKOmyomtoZ43lmkzgW21BKdPV19IWmrm2TRI4a4X5pRrmAGX2vHLwBawCGpCe9Ec4J5ERPRI82a9zItlul6mRY6V5ttTeqK/c172e63OOc+5AWsncr11ukPnX8/1OwlPubFZl9WqzCICdw6MojL4Jt6CybPXHVgqj3TJdEci4u57TBShuDgK7qlEHjH1zD2pSYsuuWY+0K5818JUSJN4cMH6LYnImHiwuMJbfiARgY4KfNjw+7UD62C4PAQ6uLWk/pP8WJZlWlXhJ63IJ2TWqIa6iWhh3J5TxJZWqypOszjH5NyB4jNo36/mTZl/nMWGt88IHcUDofjdMJluM7e5V0myvU1E5eQtLcyW359ZHCgYaCLVpsjLclUmSUUePkWESYF8WaHY9LxG2EOD7DM6NakHjFNK7LvzVx5lJ0xFkq7y9WpinMOWeomIp4yZnR1l2LINAIo+eLp4T7mBxU97uqM2PHzXS8DAaXj+PMmmE9Prk3WFQYLY7Vtt9jpU2jst1F7bBYfFH6AcFisTDn2818bpxRsJOwPDcEG4H65IRL6I/lRjpEqrLEmS5Gn2YazrvCqqPH94iIjdi74PzJz4Ew66R4+HovHhCvTohJN4yVsF3eIKOrDOUBlUXgnX9Ebgg+TrMiK3HhsFIk+xoTjY6YAFFHSxHc+iU6p2okW/Qxs7gvIwz8DxMV+AllcvQguqObQwQf5HaJuXoW0eQVtl/wlrn05z5LLNndp8gBiGDDvIG/h8UIdE3CssyVWuq31RdeS5HpDGSRZnxTU2gFVdZMt1Uj4/0Z9YVvkaLR9Nv38xa18aps+P3ynzf//t1+u3Py+urt9cv70KbtQOTG+ECjzclO3nggmNFZPcZPnNXSlXCbslETlSifw44wH7/6NpRdI0ywmWUS+Fa4yXME2WDhzl1FGkvKXCGP1CXUM/Fmw8VKzgNFTxo1o/txM9NRO8IeY0Rp2hF815kaahOWeLOMmDY7COcj12C6l3hnLtA7BnupfST0aP8h2g+bqKiDYcTIzkYMb2RnPv9IAjXPJMojvoeh1ziLk39Nvf3/7SMdfxcJbUqygM1TBe8+xhvmTM2HwYNwLFIGwDY7bDUZwHgdSMyma2ic8WgkEnzpvw6RKmj2AwaYdiOkkNiK71xsJ0PoQ+8xeGjoQj4Fj26qD0ZxVWfAaid/NlaNi4ZsuICP8ljCEIy0576mBuxBGrSdIWzj7EXXOi4vx9ay52dRQ9u1o9/AMAAP//AwBIcdWApgwAAA==
+    http_version: 
+  recorded_at: Thu, 31 Mar 2022 14:12:22 GMT
+recorded_with: VCR 5.0.0

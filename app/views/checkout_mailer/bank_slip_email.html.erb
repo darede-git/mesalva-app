@@ -1,0 +1,27 @@
+<div style="width: 100%; max-width: 600px; margin: 0 auto; font-family: Arial; font-size: 16px; font-weight: 500; color: #5e5e5e;">
+  <span style="display: none;"><%= @preheader %></span>
+  <div style="margin: 15px;">
+    <div>
+      <img class="center" src="<%= t('mailer.checkout.logo_email_mesalva') %>" alt="Logotipo do Me Salva!">
+    </div>
+    <div>
+      <p>Olá <%= @first_name %>,</p>
+      <p><%= @initial_message_html.html_safe %></p>
+    </div>
+    <div>
+      <ul>
+        <li style="margin-left: 0px; font-size: 14px; margin-top: 5px; margin-bottom: 5px;"><b>Valor: </b><%= @price %></li>
+        <li style="margin-left: 0px; font-size: 14px; margin-top: 5px; margin-bottom: 5px;"><b>Data máxima para pagamento: </b><%= @due_date %></li>
+        <li style="margin-left: 0px; font-size: 14px; margin-top: 5px; margin-bottom: 5px;"><b>Código de barras: </b><%= @barcode %></li>
+      </ul>
+    </div>
+    <div style="display: table; margin: 0 auto;">
+      <a href="<%= @bank_slip %>" style="text-decoration: none; border-radius: 4px; background-color: #ed4343; color: #ffffff; border: none; padding: 14px; font-size: 16px; display: inline-block; font-family : Arial; margin: 50px;">Visualizar boleto</a>
+    </div>
+    <div>
+      <p> <%= @final_message_html.html_safe %> </p>
+      <p>Um abraço,</p>
+      <p><b>Equipe Me Salva!</b></p>
+    </div>
+  </div>
+</div>

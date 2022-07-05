@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "dev": "rails s",
+    "start": "sh bin/ebs-start.sh"
+  },
+  "dependencies": {
+    "dredd": "^14.0.0",
+    "moment": "^2.29.1"
+  }
+}

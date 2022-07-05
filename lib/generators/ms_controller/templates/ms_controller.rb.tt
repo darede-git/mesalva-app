@@ -1,0 +1,54 @@
+# frozen_string_literal: true
+
+class <%= controller_class_name %>Controller < ApplicationController
+  before_action :authenticate_permission
+  before_action :set_<%=singular_table_name %>, only: %i[show update destroy]
+
+  def index
+    <%= plural_table_name %> = <%= controller_class_name.singularize %>.page(page_param)
+    render json: serialize(<%= plural_table_name %>), status: :ok
+  end
+
+  def show
+    if @<%= singular_table_name %>
+      render json: serialize(@<%= singular_table_name %>), status: :ok
+    else
+      render_not_found
+    end
+  end
+
+  def create
+    @<%= singular_table_name %> = <%= controller_class_name.singularize %>.new(<%= singular_table_name %>_params)
+    if @<%= singular_table_name %>.save
+      render json: serialize(@<%= singular_table_name %>), status: :created
+    else
+      render_unprocessable_entity(@<%= singular_table_name %>.errors)
+    end
+  end
+
+  def update
+    if @<%= singular_table_name %>.update(<%= singular_table_name %>_params)
+      render json: serialize(@<%= singular_table_name %>), status: :ok
+    else
+      render_unprocessable_entity(@<%= singular_table_name %>.errors)
+    end
+  end
+
+  def destroy
+    if @<%= singular_table_name %>.destroy
+      render_no_content
+    else
+      render_unprocessable_entity(@<%= singular_table_name %>.errors)
+    end
+  end
+
+  private
+
+  def set_<%= singular_table_name %>
+    @<%= singular_table_name %> = <%= controller_class_name.singularize %>.find(<%= singular_table_name %>_params[:id])
+  end
+
+  def <%= singular_table_name %>_params
+    params.permit(:id, <%= args_to_symbols %>)
+  end
+end

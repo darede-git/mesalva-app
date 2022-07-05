@@ -1,0 +1,7 @@
+# frozen_string_literal: true
+
+FactoryBot.define do
+  factory :<%= singular_table_name %> do
+<% args_count.times do |index| -%>    <%= "#{arg_content(index)}#{line_break_for_loop(args_count, index)}" -%><% end -%>
+  <%= args_count.positive? ? "\n  end" : "end" %>
+end

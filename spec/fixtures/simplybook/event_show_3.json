@@ -1,0 +1,19 @@
+{
+  "id": 3,
+  "additional_fields": [{
+    "field_name": "Link Jitsi",
+    "value": "https://some.link/3"
+  }],
+  "provider": {
+    "email": "contentteacher2@mesalva.com"
+  },
+  "service": {
+    "name": "Mentoring Example 1",
+    "description": ""
+  },
+  "client": {
+    "email": "user1@mesalva.com"
+  },
+  "status": "confirmed",
+  "start_datetime": "2022-02-03 10:10:00"
+}

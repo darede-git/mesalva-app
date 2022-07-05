@@ -1,0 +1,156 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.pagar.me/1/plans/171152
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - pagarme-ruby/2.3.0
+      Content-Type:
+      - application/json; charset=utf8
+      Content-Length:
+      - '2'
+      Authorization:
+      - Basic YWtfdGVzdF83UU1XMjk1WmZ1N1RaSGtjMnRCVzhTaFhBZ3pCNmk6eA==
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 29 Jan 2020 18:42:28 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=dc1c5f527217baa5d5d2a2a84d1df13a61580323348; expires=Fri, 28-Feb-20
+        18:42:28 GMT; path=/; domain=.pagar.me; HttpOnly; SameSite=Lax
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type, Authorization, X-Requested-With, X-HTTP-Method-Override
+      Access-Control-Allow-Methods:
+      - GET,PUT,POST,DELETE
+      Access-Control-Allow-Origin:
+      - "*"
+      Charset:
+      - utf-8
+      Etag:
+      - W/"11d-xr8JLTgD9Jh6T05Q3+2u7sEk6nU"
+      X-Ratelimit-Limit:
+      - '30'
+      X-Ratelimit-Remaining:
+      - '29'
+      X-Ratelimit-Reset:
+      - '1580323350'
+      X-Response-Time:
+      - 14.911ms
+      X-Request-Id:
+      - acafd202-39be-4021-ae2e-01ec6f42d955
+      Strict-Transport-Security:
+      - max-age=300; includeSubDomains
+      Cf-Cache-Status:
+      - DYNAMIC
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 55cd589e8d05eede-GRU
+      Content-Encoding:
+      - gzip
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAAzyNwU5CMRREf8XMupj2gQ+4/2DiwpXGNJf2RkpuW9IWEmL8d4OIy5mcOfOFujtIGCAclQsMUgS5tXNPkwHneioDtNpurUHkSwctrUHhLCC8KJf68Cyls8JgtMTqb9QvPsSHJjwkgjBZt17YebG0r25DbkXT/Lix8xsMjnzJUobPMvY1dtA7dlVlVBiEJjENH7hFfBiEqrWByknVIOy5fUq/x1T6YNWrqoPctTjXFMQ3yalE+d/d/6Jw1FTE/4l8KkPamfUGfv8AAAD//wMAqxJ1Eh0BAAA=
+    http_version: 
+  recorded_at: Wed, 29 Jan 2020 18:42:28 GMT
+- request:
+    method: post
+    uri: https://api.pagar.me/1/subscriptions
+    body:
+      encoding: UTF-8
+      string: '{"amount":1000,"postback_url":"http://085af585.ngrok.io","customer":{"name":"Me
+        Salva!","document_number":"98435565009","email":"email@teste.com","phone":{"ddd":"51","number":"991991919"},"address":{"street":"Rua
+        Padre Chagas","neighborhood":"Moinhos de Vento","zipcode":"91920-000","street_number":79,"complementary":"302"}},"metadata":{"user_id":2,"nome":"Me
+        Salva!","logradouro":"Rua Padre Chagas","numero":79,"complemento":"302","bairro":"Moinhos
+        de Vento","cidade":"Porto Alegre","estado":"RS","cep":"91920-000","produto-comprado":"Enem
+        Semestral2","tempo-de-duração-do-produto":6,"data-da-compra":"2020-01-29T15:42:28.413-03:00"},"plan":null,"payment_method":"boleto","installments":1,"status":"local","plan_id":171152,"card_expiration_date":""}'
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - pagarme-ruby/2.3.0
+      Content-Type:
+      - application/json; charset=utf8
+      Content-Length:
+      - '753'
+      Authorization:
+      - Basic YWtfdGVzdF83UU1XMjk1WmZ1N1RaSGtjMnRCVzhTaFhBZ3pCNmk6eA==
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 29 Jan 2020 18:42:29 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d194f3c31d3c909631d5ad40e9aba859d1580323348; expires=Fri, 28-Feb-20
+        18:42:28 GMT; path=/; domain=.pagar.me; HttpOnly; SameSite=Lax
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type, Authorization, X-Requested-With, X-HTTP-Method-Override
+      Access-Control-Allow-Methods:
+      - GET,PUT,POST,DELETE
+      Access-Control-Allow-Origin:
+      - "*"
+      Charset:
+      - utf-8
+      Etag:
+      - W/"cdb-lMLmpglpRysCNEdIQcXwkBYpY0k"
+      Vary:
+      - X-HTTP-Method-Override
+      X-Pagarme-Version:
+      - '2017-07-17'
+      X-Response-Time:
+      - 496.355ms
+      X-Request-Id:
+      - a5feda90-2e21-4ad8-af3a-c63b72253cde
+      Strict-Transport-Security:
+      - max-age=300; includeSubDomains
+      Cf-Cache-Status:
+      - DYNAMIC
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 55cd58a06e5deeba-GRU
+      Content-Encoding:
+      - gzip
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA+xW667bRBB+lTD8dRLfE1tCgKqiCmg56gVEUWVNvJNkyXrX7K7TnlZ5Gn7wIH0xtGvHcdoUFX4jHenEc9+Zb77dd6A2v1NtoQTTbUyteWu5khBAK1BC+e6i94IAOIMyWkVRFgeAjeqkhTItijAAhvcGyiQMQGJDUMKdQKlmj0kaFBCA1RxF1Vt5c0tVrQktMSghDqPVPMznSfg8WpdRWsb5Yh3mL10peN+QtFVDdq+YgfI32ChBVkEAtSbGbVWjZvAqgFoJpaGUnRAB1HvUOzLnTy6NRSFcKANl5ARHxWuqNDVcMhr9zvkYIRNcUjUEqri0pI8oesNT34w0T6I0DKDutHZeVqM0WPs2Tvs3lQdgLNrOQAmvkVsud9WQFALQtO2MqwqNC9HX1NuPQsD6j45r0hCMPytNplXSUFUrRmfHUTsMpcUd6oamfu4UkK0poYwoTzOM0nS9StINslXsDDu7V5q/RVf7VXCjtq5NPW4ujbcu4moVR0maByBNN/n6aOxxOA+jeVy4sadxGa8Xqzh0Y/eWXcs+aVkswnXsLK9xeC6XWHWtaJFfRGHfaMnoSvYxSKZHqZXpzRzeqr0SbGzsADknF2hsxfiOW3Ml33J9W7HRKNmVpOWyaiaN9sIGd8Zq3lK1RSE2WB+g3KIwFEB9bJzP+N0qY51B1WnxIaz7NYJyskTY2k7TRUO1ahrStYeJtHyrsWOVqZUeK+qd+/iwt7Y15XLpwbXw6Br0G9Q9YCCKk3SW5av1RUlvWq57VLkpT4achM/DpAzDMgwXYejhoGlLDvAlYMurA907Mmpd4HWxiKJ4kRaLKHZ4nTJZNV3RhiwytOj2coNcawUlPFZc7pWZMZr9TLLvB7m4RVS4YsLQSThDf4o7pa2afStop90pa9W0ghrvV0ISxj1ucc5w7nQaP0BuNmA8jZK5PyEEQMYic/5Pn0EAQu00MtX54p52OLtDpmn2YI87NBCAVH6PH9PsGYojfuFEXUPOfFUE0GrFOquG7D7sQ0nN7Bk1ZKxG4Uq01LRqzmjOOo3v/3r/p5ozNR9cocwD6MxADPFpCoFJB0/nkcia/DgGYDA68nqEiVA1iikn+qBXOn5Znz5JrY6k3c4PYO6lmniz6bSh0V9pNhTZf2tuDpWgIzlIdvIg1WvpgVMTb+2NVRg5kjHe8/VwBG7qnhEGc82PjowEbuhC/tc75negXC7DdYbbbJ0t5E6rw4Ir+OfNu7n+txhkuF5a0lyxyljU9hM6mkQ7X4HhJ8l6vIk66QgSPoOii0W4Sj+XonvLdq8kXb8nvCQAxri7fjL/099EUQ/pjV/2oojcX1QMb48sCZMsO/mhaTLmKuZZ5k6lieztDbosLer7cW17j2pMvHIZJfHdfqP0Xvm53eIKbu+nrRyx/Ja3A/N5Ihl4xMFKjw5+wbJ1nmXFyY3RWNW45JMjjcLBOk9WWb4OgN5Y0hLFBP/2vr1cGNeJmKo7D8FLX9dpkmV5FobunKO+jwF1u4XxHTelGmqQO7T7/99YMpYWtWrOEx7im8stoWWFI1A3XNs9w7GsHU3fXZ/xNMjz4uWkXPcWfHXql+Yc5X+S/28kb8haQaz64NXcoMQdVVYdyL073cSrqwv24Q/ti+9fbI9/ZA+fPNp+1/G7w4Nfflw9Sn7aPMl/hTHC7ZfC8oxvs/xyOY1rlv2t/bXP/NW/znv6GwAA//8DAI0SDfvbDAAA
+    http_version: 
+  recorded_at: Wed, 29 Jan 2020 18:42:29 GMT
+recorded_with: VCR 5.0.0

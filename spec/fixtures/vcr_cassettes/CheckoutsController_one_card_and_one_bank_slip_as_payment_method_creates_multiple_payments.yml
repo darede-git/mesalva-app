@@ -1,0 +1,137 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.pagar.me/1/transactions
+    body:
+      encoding: UTF-8
+      string: '{"amount":800,"postback_url":"http://085af585.ngrok.io","customer":{"name":"Me
+        Salva!","document_number":"98435565009","email":"email@teste.com","phone":{"ddd":"51","number":"991991919"},"address":{"street":"Rua
+        Padre Chagas","neighborhood":"Moinhos de Vento","zipcode":"91920-000","street_number":79,"complementary":"302"}},"metadata":{"user_id":10,"nome":"Me
+        Salva!","logradouro":"Rua Padre Chagas","numero":79,"complemento":"302","bairro":"Moinhos
+        de Vento","cidade":"Porto Alegre","estado":"RS","cep":"91920-000","produto-comprado":"Enem
+        Semestral10","tempo-de-duração-do-produto":6,"data-da-compra":"2020-01-29T15:36:54.881-03:00"},"installments":1,"async":true,"card_id":"card_ckljewknk0iyn0i9t63o9h49m","capture":false,"payment_method":"credit_card","status":"local","card_expiration_date":""}'
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - pagarme-ruby/2.3.0
+      Content-Type:
+      - application/json; charset=utf8
+      Content-Length:
+      - '802'
+      Authorization:
+      - Basic YWtfdGVzdF83UU1XMjk1WmZ1N1RaSGtjMnRCVzhTaFhBZ3pCNmk6eA==
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 29 Jan 2020 18:36:55 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '2461'
+      Connection:
+      - keep-alive
+      Server:
+      - openresty
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type, Authorization, X-Requested-With, X-HTTP-Method-Override
+      Access-Control-Allow-Methods:
+      - GET,PUT,POST,DELETE
+      Access-Control-Allow-Origin:
+      - "*"
+      Charset:
+      - utf-8
+      Etag:
+      - W/"99d-ihVojV6n27ioN8YJuBcEyAJuG6E"
+      Vary:
+      - X-HTTP-Method-Override
+      X-Pagarme-Version:
+      - '2017-07-17'
+      X-Response-Time:
+      - 162.745ms
+      X-Request-Id:
+      - 011df492-76f4-4bad-afae-612439a967ab
+      Strict-Transport-Security:
+      - max-age=300; includeSubDomains
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJvYmplY3QiOiJ0cmFuc2FjdGlvbiIsInN0YXR1cyI6InByb2Nlc3NpbmciLCJyZWZ1c2VfcmVhc29uIjpudWxsLCJzdGF0dXNfcmVhc29uIjoiYWNxdWlyZXIiLCJhY3F1aXJlcl9yZXNwb25zZV9jb2RlIjpudWxsLCJhY3F1aXJlcl9uYW1lIjpudWxsLCJhY3F1aXJlcl9pZCI6bnVsbCwiYXV0aG9yaXphdGlvbl9jb2RlIjpudWxsLCJzb2Z0X2Rlc2NyaXB0b3IiOm51bGwsInRpZCI6bnVsbCwibnN1IjpudWxsLCJkYXRlX2NyZWF0ZWQiOiIyMDIwLTAxLTI5VDE4OjM2OjU1LjYzMVoiLCJkYXRlX3VwZGF0ZWQiOiIyMDIwLTAxLTI5VDE4OjM2OjU1LjYzMVoiLCJhbW91bnQiOjgwMCwiYXV0aG9yaXplZF9hbW91bnQiOjAsInBhaWRfYW1vdW50IjowLCJyZWZ1bmRlZF9hbW91bnQiOjAsImluc3RhbGxtZW50cyI6MSwiaWQiOjc3MjEzMDQsImNvc3QiOjAsImNhcmRfaG9sZGVyX25hbWUiOiJVc2VyIFRlc3QiLCJjYXJkX2xhc3RfZGlnaXRzIjoiMTExMSIsImNhcmRfZmlyc3RfZGlnaXRzIjoiNDExMTExIiwiY2FyZF9icmFuZCI6InZpc2EiLCJjYXJkX3Bpbl9tb2RlIjpudWxsLCJjYXJkX21hZ3N0cmlwZV9mYWxsYmFjayI6ZmFsc2UsImN2bV9waW4iOmZhbHNlLCJwb3N0YmFja191cmwiOiJodHRwOi8vMDg1YWY1ODUubmdyb2suaW8iLCJwYXltZW50X21ldGhvZCI6ImNyZWRpdF9jYXJkIiwiY2FwdHVyZV9tZXRob2QiOiJlY29tbWVyY2UiLCJhbnRpZnJhdWRfc2NvcmUiOm51bGwsImJvbGV0b191cmwiOm51bGwsImJvbGV0b19iYXJjb2RlIjpudWxsLCJib2xldG9fZXhwaXJhdGlvbl9kYXRlIjpudWxsLCJyZWZlcmVyIjoiYXBpX2tleSIsImlwIjoiMTg5LjExMi40OS4xMjIiLCJzdWJzY3JpcHRpb25faWQiOm51bGwsInBob25lIjp7Im9iamVjdCI6InBob25lIiwiZGRpIjoiNTUiLCJkZGQiOiI1MSIsIm51bWJlciI6Ijk5MTk5MTkxOSIsImlkIjo1MzAzNDF9LCJhZGRyZXNzIjp7Im9iamVjdCI6ImFkZHJlc3MiLCJzdHJlZXQiOiJSdWEgUGFkcmUgQ2hhZ2FzIiwiY29tcGxlbWVudGFyeSI6IjMwMiIsInN0cmVldF9udW1iZXIiOiI3OSIsIm5laWdoYm9yaG9vZCI6Ik1vaW5ob3MgZGUgVmVudG8iLCJjaXR5IjpudWxsLCJzdGF0ZSI6bnVsbCwiemlwY29kZSI6IjkxOTIwMDAwIiwiY291bnRyeSI6bnVsbCwiaWQiOjI1ODY1NDF9LCJjdXN0b21lciI6eyJvYmplY3QiOiJjdXN0b21lciIsImlkIjoyNjM3NTM0LCJleHRlcm5hbF9pZCI6bnVsbCwidHlwZSI6bnVsbCwiY291bnRyeSI6bnVsbCwiZG9jdW1lbnRfbnVtYmVyIjoiOTg0MzU1NjUwMDkiLCJkb2N1bWVudF90eXBlIjoiY3BmIiwibmFtZSI6Ik1lIFNhbHZhISIsImVtYWlsIjoiZW1haWxAdGVzdGUuY29tIiwicGhvbmVfbnVtYmVycyI6bnVsbCwiYm9ybl9hdCI6bnVsbCwiYmlydGhkYXkiOm51bGwsImdlbmRlciI6bnVsbCwiZGF0ZV9jcmVhdGVkIjoiMjAyMC0wMS0yOVQxODozNjo1NS41NzNaIiwiZG9jdW1lbnRzIjpbXX0sImJpbGxpbmciOm51bGwsInNoaXBwaW5nIjpudWxsLCJpdGVtcyI6W10sImNhcmQiOnsib2JqZWN0IjoiY2FyZCIsImlkIjoiY2FyZF9jajZ4c21rNm4wMjFybzk2ZXoweWhpMDdrIiwiZGF0ZV9jcmVhdGVkIjoiMjAxNy0wOC0yOVQxNjoxNDozNy40ODdaIiwiZGF0ZV91cGRhdGVkIjoiMjAxNy0wOC0yOVQxNjoxNDozNy43OTFaIiwiYnJhbmQiOiJ2aXNhIiwiaG9sZGVyX25hbWUiOiJVc2VyIFRlc3QiLCJmaXJzdF9kaWdpdHMiOiI0MTExMTEiLCJsYXN0X2RpZ2l0cyI6IjExMTEiLCJjb3VudHJ5IjoiVU5JVEVEIFNUQVRFUyIsImZpbmdlcnByaW50IjoiY2o1Ync0Y2lvMDAwMDBqMjNqeDVsNjBjcSIsInZhbGlkIjp0cnVlLCJleHBpcmF0aW9uX2RhdGUiOiIxMjI1In0sInNwbGl0X3J1bGVzIjpudWxsLCJtZXRhZGF0YSI6eyJiYWlycm8iOiJNb2luaG9zIGRlIFZlbnRvIiwiY2VwIjoiOTE5MjAtMDAwIiwiY2lkYWRlIjoiUG9ydG8gQWxlZ3JlIiwiY29tcGxlbWVudG8iOiIzMDIiLCJkYXRhLWRhLWNvbXByYSI6IjIwMjAtMDEtMjlUMTU6MzY6NTQuODgxLTAzOjAwIiwiZXN0YWRvIjoiUlMiLCJsb2dyYWRvdXJvIjoiUnVhIFBhZHJlIENoYWdhcyIsIm5vbWUiOiJNZSBTYWx2YSEiLCJudW1lcm8iOjc5LCJwcm9kdXRvLWNvbXByYWRvIjoiRW5lbSBTZW1lc3RyYWwxMCIsInRlbXBvLWRlLWR1cmHDp8Ojby1kby1wcm9kdXRvIjo2LCJ1c2VyX2lkIjoxMH0sImFudGlmcmF1ZF9tZXRhZGF0YSI6e30sInJlZmVyZW5jZV9rZXkiOm51bGwsImRldmljZSI6bnVsbCwibG9jYWxfdHJhbnNhY3Rpb25faWQiOm51bGwsImxvY2FsX3RpbWUiOm51bGwsImZyYXVkX2NvdmVyZWQiOmZhbHNlLCJmcmF1ZF9yZWltYnVyc2VkIjpudWxsLCJvcmRlcl9pZCI6bnVsbCwicmlza19sZXZlbCI6InVua25vd24iLCJyZWNlaXB0X3VybCI6bnVsbCwicGF5bWVudCI6bnVsbCwiYWRkaXRpb24iOm51bGwsImRpc2NvdW50IjpudWxsLCJwcml2YXRlX2xhYmVsIjpudWxsfQ==
+    http_version: 
+  recorded_at: Wed, 29 Jan 2020 18:36:55 GMT
+- request:
+    method: post
+    uri: https://api.pagar.me/1/transactions
+    body:
+      encoding: UTF-8
+      string: '{"amount":200,"postback_url":"http://085af585.ngrok.io","customer":{"name":"Me
+        Salva!","document_number":"98435565009","email":"email@teste.com","phone":{"ddd":"51","number":"991991919"},"address":{"street":"Rua
+        Padre Chagas","neighborhood":"Moinhos de Vento","zipcode":"91920-000","street_number":79,"complementary":"302"}},"metadata":{"user_id":10,"nome":"Me
+        Salva!","logradouro":"Rua Padre Chagas","numero":79,"complemento":"302","bairro":"Moinhos
+        de Vento","cidade":"Porto Alegre","estado":"RS","cep":"91920-000","produto-comprado":"Enem
+        Semestral10","tempo-de-duração-do-produto":6,"data-da-compra":"2020-01-29T15:36:55.842-03:00"},"payment_method":"boleto","async":false,"installments":1,"status":"local","card_expiration_date":""}'
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - pagarme-ruby/2.3.0
+      Content-Type:
+      - application/json; charset=utf8
+      Content-Length:
+      - '739'
+      Authorization:
+      - Basic YWtfdGVzdF83UU1XMjk1WmZ1N1RaSGtjMnRCVzhTaFhBZ3pCNmk6eA==
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 29 Jan 2020 18:36:56 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '2197'
+      Connection:
+      - keep-alive
+      Server:
+      - openresty
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type, Authorization, X-Requested-With, X-HTTP-Method-Override
+      Access-Control-Allow-Methods:
+      - GET,PUT,POST,DELETE
+      Access-Control-Allow-Origin:
+      - "*"
+      Charset:
+      - utf-8
+      Etag:
+      - W/"895-r+TDXbM2wSG3DuhCExYyD+SiPoE"
+      Vary:
+      - X-HTTP-Method-Override
+      X-Pagarme-Version:
+      - '2017-07-17'
+      X-Response-Time:
+      - 334.436ms
+      X-Request-Id:
+      - 3f16477e-f5fd-48bb-9935-91d3c657ffec
+      Strict-Transport-Security:
+      - max-age=300; includeSubDomains
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJvYmplY3QiOiJ0cmFuc2FjdGlvbiIsInN0YXR1cyI6IndhaXRpbmdfcGF5bWVudCIsInJlZnVzZV9yZWFzb24iOm51bGwsInN0YXR1c19yZWFzb24iOiJhY3F1aXJlciIsImFjcXVpcmVyX3Jlc3BvbnNlX2NvZGUiOm51bGwsImFjcXVpcmVyX25hbWUiOiJwYWdhcm1lIiwiYWNxdWlyZXJfaWQiOiI1OGUzZTVlZTY0NWExNDQ4NzM0YmFkNzIiLCJhdXRob3JpemF0aW9uX2NvZGUiOm51bGwsInNvZnRfZGVzY3JpcHRvciI6bnVsbCwidGlkIjo3NzIxMzA1LCJuc3UiOjc3MjEzMDUsImRhdGVfY3JlYXRlZCI6IjIwMjAtMDEtMjlUMTg6MzY6NTYuNTg3WiIsImRhdGVfdXBkYXRlZCI6IjIwMjAtMDEtMjlUMTg6MzY6NTYuODExWiIsImFtb3VudCI6MjAwLCJhdXRob3JpemVkX2Ftb3VudCI6MjAwLCJwYWlkX2Ftb3VudCI6MCwicmVmdW5kZWRfYW1vdW50IjowLCJpbnN0YWxsbWVudHMiOjEsImlkIjo3NzIxMzA1LCJjb3N0IjowLCJjYXJkX2hvbGRlcl9uYW1lIjpudWxsLCJjYXJkX2xhc3RfZGlnaXRzIjpudWxsLCJjYXJkX2ZpcnN0X2RpZ2l0cyI6bnVsbCwiY2FyZF9icmFuZCI6bnVsbCwiY2FyZF9waW5fbW9kZSI6bnVsbCwiY2FyZF9tYWdzdHJpcGVfZmFsbGJhY2siOmZhbHNlLCJjdm1fcGluIjpmYWxzZSwicG9zdGJhY2tfdXJsIjoiaHR0cDovLzA4NWFmNTg1Lm5ncm9rLmlvIiwicGF5bWVudF9tZXRob2QiOiJib2xldG8iLCJjYXB0dXJlX21ldGhvZCI6ImVjb21tZXJjZSIsImFudGlmcmF1ZF9zY29yZSI6bnVsbCwiYm9sZXRvX3VybCI6Imh0dHBzOi8vcGFnYXIubWUiLCJib2xldG9fYmFyY29kZSI6IjEyMzQgNTY3OCIsImJvbGV0b19leHBpcmF0aW9uX2RhdGUiOiIyMDIwLTAxLTMwVDAzOjAwOjAwLjAwMFoiLCJyZWZlcmVyIjoiYXBpX2tleSIsImlwIjoiMTg5LjExMi40OS4xMjIiLCJzdWJzY3JpcHRpb25faWQiOm51bGwsInBob25lIjp7Im9iamVjdCI6InBob25lIiwiZGRpIjoiNTUiLCJkZGQiOiI1MSIsIm51bWJlciI6Ijk5MTk5MTkxOSIsImlkIjo1MzAzNDJ9LCJhZGRyZXNzIjp7Im9iamVjdCI6ImFkZHJlc3MiLCJzdHJlZXQiOiJSdWEgUGFkcmUgQ2hhZ2FzIiwiY29tcGxlbWVudGFyeSI6IjMwMiIsInN0cmVldF9udW1iZXIiOiI3OSIsIm5laWdoYm9yaG9vZCI6Ik1vaW5ob3MgZGUgVmVudG8iLCJjaXR5IjpudWxsLCJzdGF0ZSI6bnVsbCwiemlwY29kZSI6IjkxOTIwMDAwIiwiY291bnRyeSI6bnVsbCwiaWQiOjI1ODY1NDJ9LCJjdXN0b21lciI6eyJvYmplY3QiOiJjdXN0b21lciIsImlkIjoyNjM3NTM1LCJleHRlcm5hbF9pZCI6bnVsbCwidHlwZSI6bnVsbCwiY291bnRyeSI6bnVsbCwiZG9jdW1lbnRfbnVtYmVyIjoiOTg0MzU1NjUwMDkiLCJkb2N1bWVudF90eXBlIjoiY3BmIiwibmFtZSI6Ik1lIFNhbHZhISIsImVtYWlsIjoiZW1haWxAdGVzdGUuY29tIiwicGhvbmVfbnVtYmVycyI6bnVsbCwiYm9ybl9hdCI6bnVsbCwiYmlydGhkYXkiOm51bGwsImdlbmRlciI6bnVsbCwiZGF0ZV9jcmVhdGVkIjoiMjAyMC0wMS0yOVQxODozNjo1Ni41NDhaIiwiZG9jdW1lbnRzIjpbXX0sImJpbGxpbmciOm51bGwsInNoaXBwaW5nIjpudWxsLCJpdGVtcyI6W10sImNhcmQiOm51bGwsInNwbGl0X3J1bGVzIjpudWxsLCJtZXRhZGF0YSI6eyJiYWlycm8iOiJNb2luaG9zIGRlIFZlbnRvIiwiY2VwIjoiOTE5MjAtMDAwIiwiY2lkYWRlIjoiUG9ydG8gQWxlZ3JlIiwiY29tcGxlbWVudG8iOiIzMDIiLCJkYXRhLWRhLWNvbXByYSI6IjIwMjAtMDEtMjlUMTU6MzY6NTUuODQyLTAzOjAwIiwiZXN0YWRvIjoiUlMiLCJsb2dyYWRvdXJvIjoiUnVhIFBhZHJlIENoYWdhcyIsIm5vbWUiOiJNZSBTYWx2YSEiLCJudW1lcm8iOjc5LCJwcm9kdXRvLWNvbXByYWRvIjoiRW5lbSBTZW1lc3RyYWwxMCIsInRlbXBvLWRlLWR1cmHDp8Ojby1kby1wcm9kdXRvIjo2LCJ1c2VyX2lkIjoxMH0sImFudGlmcmF1ZF9tZXRhZGF0YSI6e30sInJlZmVyZW5jZV9rZXkiOm51bGwsImRldmljZSI6bnVsbCwibG9jYWxfdHJhbnNhY3Rpb25faWQiOm51bGwsImxvY2FsX3RpbWUiOm51bGwsImZyYXVkX2NvdmVyZWQiOmZhbHNlLCJmcmF1ZF9yZWltYnVyc2VkIjpudWxsLCJvcmRlcl9pZCI6bnVsbCwicmlza19sZXZlbCI6InVua25vd24iLCJyZWNlaXB0X3VybCI6bnVsbCwicGF5bWVudCI6bnVsbCwiYWRkaXRpb24iOm51bGwsImRpc2NvdW50IjpudWxsLCJwcml2YXRlX2xhYmVsIjpudWxsfQ==
+    http_version: 
+  recorded_at: Wed, 29 Jan 2020 18:36:56 GMT
+recorded_with: VCR 5.0.0

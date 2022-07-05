@@ -1,0 +1,101 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.rd.services/auth/token
+    body:
+      encoding: UTF-8
+      string: '{"client_id":"38146a47-fa73-427f-95fa-dc126abe951f","client_secret":"48c2225439c34cc989a53351aa01693b","refresh_token":"vdYXbM2at2PzV1kjT5O_O6DxLq9662kEGuXLxUEWpZ0"}'
+    headers:
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Etag:
+      - W/"f0309b5c37ce077ff965c764d6ff97af"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - __rdsid=7778b60295f25d138bc724e549bb5536; path=/; expires=Fri, 10 Jun 2022
+        00:00:49 GMT; HttpOnly; secure; SameSite=Lax
+      X-Request-Id:
+      - 25bf82b3-0530-4279-a762-6ddfbb6d48d2
+      X-Runtime:
+      - '0.031194'
+      Strict-Transport-Security:
+      - max-age=631138519
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - unsafe-url
+      Expect-Ct:
+      - enforce, max-age=86400
+      Vary:
+      - Origin,Accept-Encoding
+      Date:
+      - Thu, 09 Jun 2022 00:00:49 GMT
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwczovL2FwaS5yZC5zZXJ2aWNlcyIsInN1YiI6Img3aGpLd0VKeURBNEFjT21TTmNFRWlVb29jN2VPTlhreXdsczI4cVlIa01AY2xpZW50cyIsImF1ZCI6Imh0dHBzOi8vYXBwLnJkc3RhdGlvbi5jb20uYnIvYXBpL3YyLyIsImFwcF9uYW1lIjoiQXBpIFRlc3RlIiwiZXhwIjoxNjU0ODE5MjQ5LCJpYXQiOjE2NTQ3MzI4NDksInNjb3BlIjoiIn0.SFBQSTpB_NBLGQRIfDmHA9WB4hMjlIjd_4UEZN0wMgabOIoBABsvyKl-oCyxmUWqKoOs5_xg5BP-O6UZWhXJKUTierIJZOxasH_muoFEPS7UczHYYXe-1IeEZMbr0KoSHlw00HmDzRUn8nbGmHYVWu7Fh2muhdxmXVLVzm8cach7JBqmx_DrUxyjk4cAgLX2GDOD3ZgkarACzoE868Gti1u_92FEywyBDB1NrNMS4Vy_BqaENsrwBIRusv76H_yjGBTUcCFKevXsvSiCHANEX9OwaI0-uMrzUuSUy2psI5pS_Yyff5YF3YWimytAw2nZcrD9-2ejOM7GiOXB48Dtzg","expires_in":86400,"refresh_token":"vdYXbM2at2PzV1kjT5O_O6DxLq9662kEGuXLxUEWpZ0"}'
+    http_version: 
+  recorded_at: Thu, 09 Jun 2022 00:00:47 GMT
+- request:
+    method: post
+    uri: https://api.rd.services/platform/events
+    body:
+      encoding: UTF-8
+      string: '{"event_type":"CONVERSION","event_family":"CDP","payload":{"conversion_identifier":"sign_in|web","name":"Me
+        Salva!","email":"user1@mesalva.com","mobile_phone":null}}'
+    headers:
+      Authorization:
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwczovL2FwaS5yZC5zZXJ2aWNlcyIsInN1YiI6Img3aGpLd0VKeURBNEFjT21TTmNFRWlVb29jN2VPTlhreXdsczI4cVlIa01AY2xpZW50cyIsImF1ZCI6Imh0dHBzOi8vYXBwLnJkc3RhdGlvbi5jb20uYnIvYXBpL3YyLyIsImFwcF9uYW1lIjoiQXBpIFRlc3RlIiwiZXhwIjoxNjU0ODE5MjQ5LCJpYXQiOjE2NTQ3MzI4NDksInNjb3BlIjoiIn0.SFBQSTpB_NBLGQRIfDmHA9WB4hMjlIjd_4UEZN0wMgabOIoBABsvyKl-oCyxmUWqKoOs5_xg5BP-O6UZWhXJKUTierIJZOxasH_muoFEPS7UczHYYXe-1IeEZMbr0KoSHlw00HmDzRUn8nbGmHYVWu7Fh2muhdxmXVLVzm8cach7JBqmx_DrUxyjk4cAgLX2GDOD3ZgkarACzoE868Gti1u_92FEywyBDB1NrNMS4Vy_BqaENsrwBIRusv76H_yjGBTUcCFKevXsvSiCHANEX9OwaI0-uMrzUuSUy2psI5pS_Yyff5YF3YWimytAw2nZcrD9-2ejOM7GiOXB48Dtzg
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Etag:
+      - W/"496d355a1f2d2a1c622399917c7b3ef2"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 1f394436-3bf7-492c-9a3d-831868f9736b
+      X-Runtime:
+      - '0.094238'
+      Date:
+      - Thu, 09 Jun 2022 00:00:49 GMT
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"event_uuid":"130537f4-67c1-4185-8db5-31a73adec08d"}'
+    http_version: 
+  recorded_at: Thu, 09 Jun 2022 00:00:47 GMT
+recorded_with: VCR 5.0.0

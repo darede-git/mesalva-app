@@ -1,0 +1,185 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.pagar.me/1/plans
+    body:
+      encoding: UTF-8
+      string: '{"name":"Test Package 1580320260","amount":1000,"days":30}'
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - pagarme-ruby/2.3.0
+      Content-Type:
+      - application/json; charset=utf8
+      Content-Length:
+      - '58'
+      Authorization:
+      - Basic YWtfdGVzdF83UU1XMjk1WmZ1N1RaSGtjMnRCVzhTaFhBZ3pCNmk6eA==
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 29 Jan 2020 18:39:36 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '293'
+      Connection:
+      - keep-alive
+      Server:
+      - openresty
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type, Authorization, X-Requested-With, X-HTTP-Method-Override
+      Access-Control-Allow-Methods:
+      - GET,PUT,POST,DELETE
+      Access-Control-Allow-Origin:
+      - "*"
+      Charset:
+      - utf-8
+      Etag:
+      - W/"125-Ezxi2Kkc+qyBJnZXf64XDGfN1eE"
+      Vary:
+      - X-HTTP-Method-Override
+      X-Response-Time:
+      - 19.873ms
+      X-Request-Id:
+      - 711562b9-e2c0-4e2c-9072-3b56df31777b
+      Strict-Transport-Security:
+      - max-age=300; includeSubDomains
+    body:
+      encoding: UTF-8
+      string: '{"object":"plan","id":450316,"amount":1000,"days":30,"name":"Test Package
+        1580320260","trial_days":0,"date_created":"2020-01-29T18:39:36.572Z","payment_methods":["boleto","credit_card"],"color":null,"charges":null,"installments":1,"invoice_reminder":null,"payment_deadline_charges_interval":1}'
+    http_version: 
+  recorded_at: Wed, 29 Jan 2020 18:39:36 GMT
+- request:
+    method: get
+    uri: https://api.pagar.me/1/plans/450316
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - pagarme-ruby/2.3.0
+      Content-Type:
+      - application/json; charset=utf8
+      Content-Length:
+      - '2'
+      Authorization:
+      - Basic YWtfdGVzdF83UU1XMjk1WmZ1N1RaSGtjMnRCVzhTaFhBZ3pCNmk6eA==
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 29 Jan 2020 18:39:37 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '293'
+      Connection:
+      - keep-alive
+      Server:
+      - openresty
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type, Authorization, X-Requested-With, X-HTTP-Method-Override
+      Access-Control-Allow-Methods:
+      - GET,PUT,POST,DELETE
+      Access-Control-Allow-Origin:
+      - "*"
+      Charset:
+      - utf-8
+      Etag:
+      - W/"125-Ezxi2Kkc+qyBJnZXf64XDGfN1eE"
+      X-Ratelimit-Limit:
+      - '30'
+      X-Ratelimit-Remaining:
+      - '29'
+      X-Ratelimit-Reset:
+      - '1580323179'
+      X-Response-Time:
+      - 18.496ms
+      X-Request-Id:
+      - fe3d0cf2-1567-4f9e-a8f6-561993209bf2
+      Strict-Transport-Security:
+      - max-age=300; includeSubDomains
+    body:
+      encoding: UTF-8
+      string: '{"object":"plan","id":450316,"amount":1000,"days":30,"name":"Test Package
+        1580320260","trial_days":0,"date_created":"2020-01-29T18:39:36.572Z","payment_methods":["boleto","credit_card"],"color":null,"charges":null,"installments":1,"invoice_reminder":null,"payment_deadline_charges_interval":1}'
+    http_version: 
+  recorded_at: Wed, 29 Jan 2020 18:39:37 GMT
+- request:
+    method: put
+    uri: https://api.pagar.me/1/plans/450316
+    body:
+      encoding: UTF-8
+      string: '{"name":"Updated Test Package 1580320260"}'
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - pagarme-ruby/2.3.0
+      Content-Type:
+      - application/json; charset=utf8
+      Content-Length:
+      - '42'
+      Authorization:
+      - Basic YWtfdGVzdF83UU1XMjk1WmZ1N1RaSGtjMnRCVzhTaFhBZ3pCNmk6eA==
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 29 Jan 2020 18:39:38 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '301'
+      Connection:
+      - keep-alive
+      Server:
+      - openresty
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type, Authorization, X-Requested-With, X-HTTP-Method-Override
+      Access-Control-Allow-Methods:
+      - GET,PUT,POST,DELETE
+      Access-Control-Allow-Origin:
+      - "*"
+      Charset:
+      - utf-8
+      Etag:
+      - W/"12d-Rw5q4TGhTnk+r1PS/mUPninmkfA"
+      X-Response-Time:
+      - 22.492ms
+      X-Request-Id:
+      - 729a7960-b084-47de-b00b-356af3ad8abf
+      Strict-Transport-Security:
+      - max-age=300; includeSubDomains
+    body:
+      encoding: UTF-8
+      string: '{"object":"plan","id":450316,"amount":1000,"days":30,"name":"Updated
+        Test Package 1580320260","trial_days":0,"date_created":"2020-01-29T18:39:36.572Z","payment_methods":["boleto","credit_card"],"color":null,"charges":null,"installments":1,"invoice_reminder":null,"payment_deadline_charges_interval":1}'
+    http_version: 
+  recorded_at: Wed, 29 Jan 2020 18:39:38 GMT
+recorded_with: VCR 5.0.0

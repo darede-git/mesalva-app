@@ -1,0 +1,38 @@
+{
+  "data": [
+    {
+      "provider": {
+        "email": "contentteacher1@mesalva.com"
+      },
+      "service": {
+        "name": "Mentoring Example 1",
+        "description": ""
+      },
+      "client": {
+        "email": "user1@mesalva.com"
+      },
+      "id": 1,
+      "status": "confirmed"
+    },
+    {
+      "provider": {
+        "email": "contentteacher2@mesalva.com"
+      },
+      "service": {
+        "name": "Mentoring Example 2",
+        "description": ""
+      },
+      "client": {
+        "email": "user2@mesalva.com"
+      },
+      "id": 2,
+      "status": "confirmed"
+    }
+  ],
+  "metadata": {
+    "items_count": 4,
+    "pages_count": 2,
+    "page": 1,
+    "on_page": 2
+  }
+}

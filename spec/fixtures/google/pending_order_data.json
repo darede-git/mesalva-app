@@ -1,0 +1,11 @@
+{
+ "kind": "androidpublisher#subscriptionPurchase",
+ "startTimeMillis": "1516196363390",
+ "autoRenewing": "true",
+ "priceCurrencyCode": "BRL",
+ "priceAmountMicros" :"44990000",
+ "countryCode": "BR",
+ "developerPayload": "",
+ "paymentState": "0",
+ "orderId": "GPA.3345-7300-5002-15738..0"
+}

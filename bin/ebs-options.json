@@ -1,0 +1,132 @@
+[
+  {
+    "Namespace": "aws:elasticbeanstalk:application:environment",
+    "OptionName": "ACTIVE_ADMIN_USERNAME",
+    "Value": "{{resolve:ssm:ACTIVE_ADMIN_USERNAME}}"
+  },
+  {
+    "Namespace": "aws:elasticbeanstalk:application:environment",
+    "OptionName": "ACTIVE_ADMIN_PASSWORD",
+    "Value": "{{resolve:ssm:ACTIVE_ADMIN_PASSWORD}}"
+  },
+  {
+    "Namespace": "aws:elasticbeanstalk:application:environment",
+    "OptionName": "ADMIN_INVITE_URI",
+    "Value": "{{resolve:ssm:ADMIN_INVITE_URI}}"
+  },
+  {
+    "Namespace": "aws:elasticbeanstalk:application:environment",
+    "OptionName": "ADMIN_PASSWORD_RESET_URI",
+    "Value": "{{resolve:ssm:ADMIN_PASSWORD_RESET_URI}}"
+  },
+  {
+    "Namespace": "aws:elasticbeanstalk:application:environment",
+    "OptionName": "ALGOLIASEARCH_API_KEY",
+    "Value": "{{resolve:ssm:ALGOLIASEARCH_API_KEY}}"
+  },
+  {
+    "Namespace": "aws:elasticbeanstalk:application:environment",
+    "OptionName": "ALGOLIASEARCH_API_KEY_SEARCH",
+    "Value": "{{resolve:ssm:ALGOLIASEARCH_API_KEY_SEARCH}}"
+  },
+  {
+    "Namespace": "aws:elasticbeanstalk:application:environment",
+    "OptionName": "ALGOLIASEARCH_APPLICATION_ID",
+    "Value": "{{resolve:ssm:ALGOLIASEARCH_APPLICATION_ID}}"
+  },
+  {
+    "Namespace": "aws:elasticbeanstalk:application:environment",
+    "OptionName": "ANDROID_APP_TOKEN",
+    "Value": "{{resolve:ssm:ANDROID_APP_TOKEN}}"
+  },
+  {
+    "Namespace": "aws:elasticbeanstalk:application:environment",
+    "OptionName": "ANDROID_TEST_REPOSITORY_APP_TOKEN",
+    "Value": "{{resolve:ssm:ANDROID_TEST_REPOSITORY_APP_TOKEN}}"
+  },
+  {
+    "Namespace": "aws:elasticbeanstalk:application:environment",
+    "OptionName": "APPLE_LOGIN_CLIENT_ID",
+    "Value": "{{resolve:ssm:APPLE_LOGIN_CLIENT_ID}}"
+  },
+  {
+    "Namespace": "aws:elasticbeanstalk:application:environment",
+    "OptionName": "APPLE_LOGIN_TEAM_ID",
+    "Value": "{{resolve:ssm:APPLE_LOGIN_TEAM_ID}}"
+  },
+  {
+    "Namespace": "aws:elasticbeanstalk:application:environment",
+    "OptionName": "APPLE_LOGIN_KEY_ID",
+    "Value": "{{resolve:ssm:APPLE_LOGIN_KEY_ID}}"
+  },
+  {
+    "Namespace": "aws:elasticbeanstalk:application:environment",
+    "OptionName": "APPLE_LOGIN_PRIVATE_KEY",
+    "Value": "{{resolve:ssm:APPLE_LOGIN_PRIVATE_KEY}}"
+  },
+  {
+    "Namespace": "aws:elasticbeanstalk:application:environment",
+    "OptionName": "APPLE_OAUTH_LOGIN_URL",
+    "Value": "{{resolve:ssm:APPLE_OAUTH_LOGIN_URL}}"
+  },
+  {
+    "Namespace": "aws:elasticbeanstalk:application:environment",
+    "OptionName": "AMAZON_ACCESS_KEY_ID",
+    "Value": "{{resolve:ssm:AMAZON_ACCESS_KEY_ID}}"
+  },
+  {
+    "Namespace": "aws:elasticbeanstalk:application:environment",
+    "OptionName": "AMAZON_BUCKET_FILES_PATH",
+    "Value": "{{resolve:ssm:AMAZON_BUCKET_FILES_PATH}}"
+  },
+  {
+    "Namespace": "aws:elasticbeanstalk:application:environment",
+    "OptionName": "AMAZON_SECRET_ACCESS_KEY",
+    "Value": "{{resolve:ssm:AMAZON_SECRET_ACCESS_KEY}}"
+  },
+  {
+    "Namespace": "aws:elasticbeanstalk:application:environment",
+    "OptionName": "BOOKSHOP_COUPONS_CAMPAING_ACTIVE",
+    "Value": "{{resolve:ssm:BOOKSHOP_COUPONS_CAMPAING_ACTIVE}}"
+  },
+  {
+    "Namespace": "aws:elasticbeanstalk:application:environment",
+    "OptionName": "CACHE_EXPIRATION_HOURS",
+    "Value": "{{resolve:ssm:CACHE_EXPIRATION_HOURS}}"
+  },
+  {
+    "Namespace": "aws:elasticbeanstalk:application:environment",
+    "OptionName": "CHECKOUT_RATE_LIMIT",
+    "Value": "{{resolve:ssm:CHECKOUT_RATE_LIMIT}}"
+  },
+  {
+    "Namespace": "aws:elasticbeanstalk:application:environment",
+    "OptionName": "CLIENT_WHITELIST",
+    "Value": "{{resolve:ssm:CLIENT_WHITELIST}}"
+  },
+  {
+    "Namespace": "aws:elasticbeanstalk:application:environment",
+    "OptionName": "CONFIRM_SUCCESS_URI",
+    "Value": "{{resolve:ssm:CONFIRM_SUCCESS_URI}}"
+  },
+  {
+    "Namespace": "aws:elasticbeanstalk:application:environment",
+    "OptionName": "CONFIRM_EMAIL_CHANGE_URI",
+    "Value": "{{resolve:ssm:CONFIRM_EMAIL_CHANGE_URI}}"
+  },
+  {
+    "Namespace": "aws:elasticbeanstalk:application:environment",
+    "OptionName": "COVERBAND_PASSWORD",
+    "Value": "{{resolve:ssm:COVERBAND_PASSWORD}}"
+  },
+  {
+    "Namespace": "aws:elasticbeanstalk:application:environment",
+    "OptionName": "COVERBAND_DISABLE_AUTO_START",
+    "Value": "{{resolve:ssm:COVERBAND_DISABLE_AUTO_START}}"
+  },
+  {
+    "Namespace": "aws:elasticbeanstalk:application:environment",
+    "OptionName": "DATABASE_URL",
+    "Value": "{{resolve:ssm:DATABASE_URL}}"
+  }
+]

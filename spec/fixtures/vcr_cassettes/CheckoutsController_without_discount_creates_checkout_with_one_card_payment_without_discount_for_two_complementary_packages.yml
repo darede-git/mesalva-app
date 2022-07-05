@@ -1,0 +1,82 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.pagar.me/1/transactions
+    body:
+      encoding: UTF-8
+      string: '{"amount":2400,"postback_url":"http://085af585.ngrok.io","customer":{"external_id":"user30@mesalva.com","type":"individual","country":"br","name":"Me
+        Salva!","documents":[{"type":"cpf","number":"98435565009"}],"email":"email@teste.com","birthday":"1969-12-31","phone_numbers":["+5551991991919"]},"billing":{"name":"default","address":{"neighborhood":"Moinhos
+        de Vento","zipcode":"91920000","city":"Porto Alegre","state":"RS","complementary":"302","country":"br","street":"Rua
+        Padre Chagas","street_number":"79"}},"items":[{"id":"32","title":"Enem Semestral32","unit_price":999,"quantity":1,"tangible":false,"category":"enem-semestral"},{"id":"33","title":"Enem
+        Semestral33","unit_price":800,"quantity":1,"tangible":false,"category":"enem-semestral"},{"id":"34","title":"Enem
+        Semestral34","unit_price":600,"quantity":1,"tangible":false,"category":"enem-semestral"}],"metadata":{"user_id":30,"nome":"Me
+        Salva!","logradouro":"Rua Padre Chagas","numero":79,"complemento":"302","bairro":"Moinhos
+        de Vento","cidade":"Porto Alegre","estado":"RS","cep":"91920-000","produto-comprado":"Enem
+        Semestral32","tempo-de-duração-do-produto":6,"order-id":23,"data-da-compra":"2022-03-31
+        11:12:20 -0300"},"payment_method":"credit_card","installments":1,"async":true,"card_id":"card_ckljewknk0iyn0i9t63o9h49m","status":"local","card_expiration_date":""}'
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - pagarme-ruby/2.3.0
+      Content-Type:
+      - application/json; charset=utf8
+      Content-Length:
+      - '1336'
+      Authorization:
+      - Basic YWtfdGVzdF83UU1XMjk1WmZ1N1RaSGtjMnRCVzhTaFhBZ3pCNmk6eA==
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 31 Mar 2022 14:12:23 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Content-Type, Authorization, X-Requested-With, X-HTTP-Method-Override
+      Vary:
+      - X-HTTP-Method-Override
+      Access-Control-Allow-Methods:
+      - GET,PUT,POST,DELETE
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Charset:
+      - utf-8
+      X-Pagarme-Version:
+      - '2019-09-01'
+      Etag:
+      - W/"ca6-j0L8fyY5qx4y4VyZ+eMc14qtNT4"
+      X-Response-Time:
+      - 171.968ms
+      X-Request-Id:
+      - 463c3558-9b94-49ac-b5c4-77464cc0d981
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Cf-Cache-Status:
+      - DYNAMIC
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 6f49adfafd47a5f7-GRU
+      Content-Encoding:
+      - gzip
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA7xX227cNhD9lS1fK22o266lpwRtCvQhRRC7fUhhCFxydkUvRcq8rO0E/po+9EPyY8VoJa3WFzQvLWDA1nA4PHPm6q/EbG6Ae1IRb5l2jHtpNImI88wHRyrSWcPBOal3JCIWtsFBbYE5o0mlg1Kj6iQkjN8GacGSaPqztuA6ox3U3AgYLz4/bcE5tnuuoFn7XCjFJAq+MVZ+YQj+7Alntr4W4LiVnTd2FPvTXe3C+KdgHmpugXkQpCIpTdOYZnGWXCV5laRVmi1pvvpMBs3QiX/XZK0J2pMqzSk9AQVRjwc0Ih2TZ9/IshbnOlI7z5RqQXtHqiQi6EGyKoqS5mlEuHFHPc6sqBujxMQa+WBs10Bwi1+kazbBaiCDnmLO10LuJNokSZIk48lW2vlRnswPN5ZpdPsgHRtlndR1OyO+F7Zs57yVHdRbptSG8T2ptkw5iAg/tHhn+u6M86hQB6tIRRrvu+rNG3pRsG1xUSz1zpr9UhqCbD0gC3ULvjEIg1sQ0tf4Yo+m88HC6Ri4aVuwHL1m2sutZUHUjhs7gd0YBd4cnz6TbJidZ9MghftO2mOuYQacn45fFraARVAR1sl6Dw8kIrJDmi/WyyxfJutlkmdYaWFzTE+0d8rLrjH6lPNCWHBuIjc4b1o0/vVUv5PwmBsX66Jc5RcRgXsPVjPV2ybBgc3o2xYcUwe25KYlEfEPHSaK1EIepAhMIY+YevaBVGSDJoXhoaddh3YDUyFN4sEE77YkImPiweISX/mBRARaJjGw/e+3HpyH4fHe0cGsI9Wf5MeiKJKy7H+Sklwjs1bXzE9ES+sbwRBbUq7KOEnjDJNzB1rMoH1HNdPs88w3fH1G6CgeCMXvmqtkm/r1zZrSpqRN6e8aI7lp2InFgYKBJlJe5FlRrApKS/J4HRGuJPLlpOZTeK10+xrZ52xqUo/op1LYd+dRHmVHTDlNVtk6mxgXsGVBIeIpY2Z3Rxm2bAuAok+BLT4yYWHxU8N2zPWBbzsF6Djrw5/RdLoxRZ+sS3QS5K7ZGNuYvtI+GKkb4xYCFn+A9lisXHq08dFYbxbvFOwsDMMF4X66JBH5IrtjjZEyKVNKKX2efejrOivzMqOPjxFxjey6npkjf9JD+yR4KBoDl+UYHekVPvJeQ7u4hBact0z1R0FLX3dWYkBW2KZvAzYKRJ5gQ/GwMz0W0NDGbryLRpneyQ3aHdrYAXSAeQaOwXwNWvY6tOwJtIv/GVr6OrT0CbSyLP8LaNfHOXLe5o5tvofYDxm+Vzdwt9d7Kh80laVfZaZs8rIlL/WAJKZpnOZX2ABWVZ4u17R4eaI/0yyzNWo+mX7fMWtfG6Yvj98p83//7der9z8vLq/eXb2/7M3oHdjOSt3zcFNs7nIuDVYMvUmzm/tCrSi/JRE5MIX8eBsA+/+TaUWSJM0IllGnpK9tUDBNlhY8E8wzpHzDpLXmlbqGbizYeKhYKVhfxU9q/dROzNRM8IVYsBjPLDtrzosk6ZszXcQ06w2D80yYsVsos7NMmNADe6F7afNs9OjQAqqvy4gYK8DGSE6aRbjbiuDNgKN/5IVE99B2JhYQi2DZt7+//WViYeLhLqlWUT9U+/Ga0cf5kjFj83HcCDSHfhsYsx0O8jQIlOFM1bNNfLYQDGfytAkfH+HmABaTdiimo9SCbDfBOpju967P7PVDR8EBcCwHvdfmTvcrPgfZ+fkyNGxcs2VE9v8ljC5Ix4976qBu5QGrSbENnGzI+/pIxen71p7t6ih6cbV6/AcAAP//AwCH8gczpgwAAA==
+    http_version: 
+  recorded_at: Thu, 31 Mar 2022 14:12:21 GMT
+recorded_with: VCR 5.0.0
