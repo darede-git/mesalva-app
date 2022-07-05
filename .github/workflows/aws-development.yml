@@ -2,7 +2,7 @@ name: Deploy Elastic Beanstalk
 
 on:
   push:
-    branches: [develop]
+    branches: [main]
 
 env:
   APP_NAME: ${{ secrets.APP_NAME }}
