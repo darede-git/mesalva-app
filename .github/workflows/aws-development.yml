@@ -39,16 +39,12 @@ jobs:
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v1
 
-      - name: Get EnvVars from SSM
-        id: ssm
-        run: |
-          node bin/ebs-options-to-env > .env
-
       - name: Get .env from Amazon SSM
         env:
           AWS_REGION: ${{ env.AWS_REGION }}
         run: |
           node bin/ebs-options-to-env > .env
+
       - name: Build, tag, and push image to Amazon ECR
         id: build-image
         env:

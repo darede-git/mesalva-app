@@ -17,8 +17,8 @@ RUN bundle install
 
 COPY . .
 
-COPY .env.sample .env
-COPY config/database.yml.sample config/database.yml
+# COPY .env.sample .env
+# COPY config/database.yml.sample config/database.yml
 
 EXPOSE 3000
 
