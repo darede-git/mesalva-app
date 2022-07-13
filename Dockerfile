@@ -1,7 +1,7 @@
 FROM ruby:2.6.6
 
 RUN apt-get update
-RUN apt-get install libpq-dev nodejs npm python make build-essential g++ gcc libxslt-dev libxml2-dev libcurl4-openssl-dev libavahi-compat-libdnssd-dev curl wget git imagemagick -y
+RUN apt-get install libpq-dev nodejs npm python make build-essential g++ gcc libxslt-dev libxml2-dev libcurl4-openssl-dev libavahi-compat-libdnssd-dev curl wget git imagemagick awscli -y
 
 ENV RAILS_ENV=production
 
