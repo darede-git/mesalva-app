@@ -9,6 +9,17 @@ module DesignSystem
       breadcrumb: :array
     }
 
+    def self.content_go_back_simple(token)
+      return nil if token.blank?
+
+      [
+        {
+          "label": "Voltar",
+          "href": "/app/conteudos/#{token}"
+        }
+      ]
+    end
+
     def self.content_go_back(token)
       return nil if token.blank?
 

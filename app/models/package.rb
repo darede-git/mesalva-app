@@ -48,7 +48,7 @@ class Package < ActiveRecord::Base
     joins('LEFT JOIN nodes ON nodes.id = packages.education_segment_id OR nodes.slug = packages.education_segment_slug')
       .joins('LEFT JOIN bookshop_gift_packages ON bookshop_gift_packages.package_id = packages.id')
       .select('packages.*, nodes.name as education_segment_name, bookshop_gift_packages.bookshop_link')
-      .filters(filter_params)
+      .ms_filters(filter_params)
   }
 
   scope :by_education_segment_slug_and_platform,

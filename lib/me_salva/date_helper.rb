@@ -3,7 +3,13 @@
 module MeSalva
   class DateHelper
     def self.now_with_offset
-      DateTime.now - (ENV['TIME_ZONE_OFFSET_HOURS'] || '3').to_i.hours
+      date_with_offset(DateTime.now)
+    end
+
+    def self.date_with_offset(date)
+      return nil if date.nil?
+
+      date - (ENV['TIME_ZONE_OFFSET_HOURS'] || '3').to_i.hours
     end
 
     def self.valid_date_with_fallback(date)

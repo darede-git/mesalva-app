@@ -11,12 +11,14 @@ module CommonModelScopes
       model
     }
 
-    scope :filters, lambda { |data|
+    scope :ms_filters, lambda { |data|
       filter_data = []
       data.each do |key, value|
         if /^like_/.match?(key)
           new_key = key.gsub(/^like_/, '')
           filter_data << sanitize_sql(["#{table.name}.#{new_key} ILIKE ?", "%#{value}%"])
+        elsif value.kind_of?(Array)
+          filter_data << "#{table.name}.#{key} IN (#{value.join(',')})"
         elsif value.nil? == false
           filter_data << sanitize_sql(["#{table.name}.#{key} = ?", value])
         end

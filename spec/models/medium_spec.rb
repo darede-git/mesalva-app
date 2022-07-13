@@ -49,7 +49,7 @@ RSpec.describe Medium, type: :model do
       it { should validate_inclusion_of(:audit_status).in_array(status) }
       context 'validates exercise size' do
         it 'does not allow saving a too big exercise' do
-          medium = exercise_with_long_text(8501)
+          medium = exercise_with_long_text(24000)
           expect { medium.save! }.to raise_error(ActiveRecord::RecordInvalid)
         end
         it 'allows saving an exercise with valid size' do

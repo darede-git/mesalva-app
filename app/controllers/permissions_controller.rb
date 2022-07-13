@@ -5,7 +5,7 @@ class PermissionsController < ApplicationController
   before_action :set_permission, except: %i[index create]
 
   def index
-    permissions = Permission.filters(permitted_filters).page(page_param)
+    permissions = Permission.ms_filters(permitted_filters).page(page_param)
     render json: serialize(permissions, v: 3), status: :ok
   end
 

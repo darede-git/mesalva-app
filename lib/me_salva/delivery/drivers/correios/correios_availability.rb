@@ -6,7 +6,7 @@ module MeSalva
       module Correios
         class CorreiosAvailability < DeliveryAvailability
           include MeSalva::Delivery::Drivers::Correios::CorreiosClient
-          include MeSalva::Delivery::Drivers::Correios::CorreiosErrors
+          include MeSalva::Delivery::Drivers::Correios::CorreiosAvailabilityErrors
 
           def service_available?(service_type)
             @service_type = service_type
@@ -15,13 +15,14 @@ module MeSalva
                                     headers: api_header(:xml),
                                     body: complete_body)
             @response = request['Envelope']['Body']['consultarAbrangenciaDoServicoResponse']['retorno']
-            availability unless errors?(@response['codigoRetorno'])
+            find_error
+            availability unless errors?
           end
 
           def services_available
             services_verified = []
             DELIVERY_METHODS.each_key do |delivery_method|
-              if service_available?(delivery_method.to_s) && no_errors?(@response['codigoRetorno'])
+              if service_available?(delivery_method.to_s) && no_errors?
                 services_verified << delivery_method.to_s
               end
             end
@@ -49,6 +50,10 @@ module MeSalva
 
           def availability
             @response['abrangencia']['listaServicos']['disponibilidade'] == 'true'
+          end
+
+          def find_error
+            @error = @response['codigoRetorno']
           end
         end
       end

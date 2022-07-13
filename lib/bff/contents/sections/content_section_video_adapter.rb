@@ -3,7 +3,7 @@
 module Bff
   module Contents
     module Sections
-      class ContentSectionVideoAdapter < ContentSectionAdapterBase
+      class ContentSectionVideoAdapter < ConsoleTemplateBase
         def initialize(content, **attr)
           @content = content
           @page_component = 'ConsoleTemplate'
@@ -11,16 +11,46 @@ module Bff
           @title = @content.name
         end
 
-        def load_content_list
-          set_items_list
-          @list = @content.active_children.map do |child|
-            {
-              "icon": { "name": "checkmark-circle", "color": "var(--color-neutral-500)" },
-              "title": child.name,
-              "permalink": child.main_permalink&.slug,
-              "link": { "href": "/app/conteudos/#{child.token}" }
+        def render(entity_type)
+          # right_content_route = ItemsListElement.new(@content).content_route
+          # return redirect_to_type(right_content_route) unless right_content_route == entity_type
+          {
+            component: 'ConsoleTemplate',
+            title: "#{@content.name} | Me Salva!",
+            description: @description,
+            image: @image,
+            content: {
+              title: @content.name,
+              children: sections,
+            },
+            sidebar: {
+              list: items_list
             }
+          }
+        end
+
+        def items_list
+          @parent = @content.parents.first
+          return @item_list = [] if @parent.nil?
+
+          @parent.active_children.map do |item|
+            ItemsListElement.new(item, active: item.token == @content.token, context: @context).render
           end
+        end
+
+        def sections
+          [
+            DesignSystem::Breadcrumb.content_go_back(@context || @content.parents.first.token),
+            {
+              "component": "Grid",
+              "children": [video]
+            },
+            DesignSystem::Grid.render(columns: [3, 1], children: [
+              DesignSystem::SectionTitle.title(@content.name),
+              rating_section
+            ]),
+            DesignSystem::Text.html(@content.description || ''),
+          ]
         end
 
         def video
@@ -36,7 +66,7 @@ module Bff
             "component": "Video",
             "controller": "getBffApi",
             "endpoint": "user/contents/video/#{medium.token}",
-            "event_slug": "contents/#{@parent.token}/#{@content.token}",
+            "event_slug": "contents/#{@context}/#{@content.token}",
             "provider": medium.provider
           }
         end
@@ -44,19 +74,14 @@ module Bff
         def sections
           [
             DesignSystem::Breadcrumb.content_go_back(@context || @content.parents.first.token),
-            {
-              "component": "Grid",
-              "children": [video]
-            },
+            DesignSystem::Grid.render(children:[video]),
             DesignSystem::Grid.render(columns: [3, 1], children: [
               DesignSystem::SectionTitle.title(@content.name),
               rating_section
             ]),
             DesignSystem::Text.html(@content.description || ''),
-            { "component": "Divider" },
-            { "component": "SectionCard",
-              "title": "Comentários",
-              text: "exemplo de comentários" }
+            DesignSystem::Divider.render,
+            DesignSystem::SectionCard.render(title: "Comentários", text: "exemplo de comentários")
           ]
         end
 
@@ -75,15 +100,6 @@ module Bff
 
         def medium
           @medium ||= @content.active_children.first
-        end
-
-        def set_items_list
-          @parent = @content.parents.first
-          return @item_list = [] if @parent.nil?
-
-          @items_list = @parent.active_children.map do |item|
-            ItemsListElement.new(item, active: item.token == @content.token, context: @context).render
-          end
         end
       end
     end

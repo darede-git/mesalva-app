@@ -1,7 +1,7 @@
 FROM ruby:2.6.6
 
 RUN apt-get update
-RUN apt-get install libpq-dev nodejs npm python make build-essential g++ gcc libxslt-dev libxml2-dev libcurl4-openssl-dev libavahi-compat-libdnssd-dev curl wget git imagemagick awscli -y
+RUN apt-get install libpq-dev nodejs npm python make build-essential g++ gcc libxslt-dev libxml2-dev libcurl4-openssl-dev libavahi-compat-libdnssd-dev curl wget git imagemagick -y
 
 ENV RAILS_ENV=production
 
@@ -15,10 +15,11 @@ RUN npm install
 COPY Gemfile* ./
 RUN bundle install
 
-COPY . .
+COPY .env.sample .env
+COPY config/database.yml.sample config/database.yml
 
-# COPY .env.sample .env
-# COPY config/database.yml.sample config/database.yml
+# If have a .env or config/database.yml will replace sample files
+COPY . .
 
 EXPOSE 3000
 

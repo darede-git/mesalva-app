@@ -3,7 +3,7 @@
 module Bff
   module Contents
     module Sections
-      class ContentSectionNodeModuleDefaultAdapter < ContentSectionAdapterBase
+      class ContentSectionNodeModuleDefaultAdapter < ConsoleTemplateBase
         def initialize(content, **attr)
           @content = content
           @page_component = 'ConsoleTemplate'
@@ -27,11 +27,35 @@ module Bff
         def sections
           [
             DesignSystem::Breadcrumb.content_go_back(@content.parents.first&.token),
-            { "component": "SectionTitle", "title": module_name(@content.name)},
             DesignSystem::Grid.render(children: [
               DesignSystem::Text.render(html: @content.description || 'Módulo sem descrição')
             ])
           ]
+        end
+
+        def items_list
+          @content.active_children.map do |item|
+            ItemsListElement.new(item, context: @content.token).render
+          end
+        end
+
+        def render(entity_type)
+          # right_content_route = ItemsListElement.new(@content).content_route
+          # return redirect_to_type(right_content_route) unless right_content_route == entity_type
+          load_content_list
+          {
+            component: 'ConsoleTemplate',
+            title: "#{@content.name} | Me Salva!",
+            description: @description,
+            image: @image,
+            content: {
+              title: module_name(@content.name),
+              children: sections,
+            },
+            sidebar: {
+              list: items_list
+            }
+          }
         end
 
         def item_subtitle(item)

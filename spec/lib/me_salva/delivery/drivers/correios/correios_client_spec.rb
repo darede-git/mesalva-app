@@ -21,6 +21,16 @@ RSpec.describe MeSalva::Delivery::Drivers::Correios::CorreiosClient do
       end
     end
   end
+  describe 'valid_method?' do
+    context 'with the delivery methods available' do
+      context 'for the delivery methods mapping' do
+        it 'returns true for the method validation' do
+          expect(valid_method?('PAC')).to eq(true)
+          expect(valid_method?('SEDEX')).to eq(true)
+        end
+      end
+    end
+  end
   describe 'apis' do
     context 'with the apis available' do
       context 'for the apis mapping' do

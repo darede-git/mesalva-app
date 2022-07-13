@@ -5,7 +5,8 @@ module DesignSystem
     COMPONENT_NAME = 'ExerciseList'
     FIELDS = {
       event_slug: :string,
-      list: :any
+      list: :any,
+      disabled: :boolean
     }
   end
 end

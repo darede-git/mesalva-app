@@ -26,6 +26,7 @@ pt-BR:
         course_structure_summary:
           slug_must_be_unique: Slug precisa ser único.
         user:
+          has_order_history: Estudante não pode ser apagado pois possui histórico de compras e a lei exige manter os dados por 5 anos
           invalid_birth_date: Data de nascimento inválida
         essay_submission:
           attributes:
@@ -35,6 +36,13 @@ pt-BR:
         delivery:
           invalid_service: Tipo de serviço inválido
           invalid_zipcode: CEP inválido
+          invalid_tangible_product: Produto inválido
+          invalid_weight: Peso do produto inválido
+          invalid_height: Altura do produto inválida
+          invalid_width: Largura do produto inválida
+          invalid_length: Comprimento do produto inválido
+          invalid_uf: UF inválido
+          invalid_tracking_code: Código de rastreamento inválido
   date:
     abbr_day_names:
       - Dom
@@ -214,6 +222,7 @@ pt-BR:
       already_instructor: Usuário atual já é instrutor.
       old_admin_reference: "Admin antigo não encontrado na tabela de usuários"
       unauthenticated_permission: "Usuário sem autorização para acessar"
+      admin_has_no_user_equivalent: "Este admin não tem um User equivalente"
     template:
       body: "Por favor, verifique o(s) seguinte(s) campo(s):"
       header:
@@ -417,3 +426,14 @@ pt-BR:
       message_unfinished_checkout: Olá, vi que você tentou realizar uma compra no Me Salva!, precisa de alguma ajuda?
       user_without_phone: Usuário sem telefone cadastrado
       no_permission_to_receive_message: Usuário sem permissão para receber mensagens
+  bff:
+    user:
+      contents_controler:
+        login_title: Cadastre-se ou entre para acessar o conteúdo do Me Salva!
+        login_button: Entrar
+        register_button: Cadastrar
+        no_credits_subtitle: Você não possui acesso a essse conteúdo
+        write_plan_text: Escrever plano de texto
+        send_essay: Enviar redação
+        show_exercise:
+          no_access_message: Adquira um pacote para responder a questão

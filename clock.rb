@@ -96,8 +96,4 @@ module Clockwork
   every(1.day, 'event_expired_accesses.job', at: '06:00') do
     AccessExpiresEventWorker.perform_async
   end
-    
-  every(1.day, 'simplybook_sync.job', at: '04:10') do
-    SimplybookSyncWorker.perform_async
-  end
 end

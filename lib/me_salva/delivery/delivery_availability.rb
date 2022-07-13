@@ -3,7 +3,7 @@
 module MeSalva
   module Delivery
     class DeliveryAvailability
-      attr_reader :sender_zipcode, :recipient_zipcode
+      attr_reader :sender_zipcode, :recipient_zipcode, :error
 
       def initialize(**params)
         @sender_zipcode = params[:sender_zipcode]

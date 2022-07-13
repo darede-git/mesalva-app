@@ -2,6 +2,7 @@
 
 class User::PermissionsController < ApplicationController
   before_action :authenticate_permission
+  before_action :validate_admin_user_presence
 
   def index
     permissions = Permission.by_user_id(user_id).page(page_param)
@@ -26,10 +27,16 @@ class User::PermissionsController < ApplicationController
 
   private
 
-  def user_id
-    current_user.id unless current_user.nil?
+  def validate_admin_user_presence
+    render_unprocessable_entity(t('errors.messages.admin_has_no_user_equivalent')) if user_id.nil?
+  end
 
-    current_admin.user.id
+  def user_id
+    return @user_id unless @user_id.nil?
+
+    @user_id = current_user.id unless current_user.nil?
+
+    @user_id = current_admin.user.id
   end
 
   def permission_params

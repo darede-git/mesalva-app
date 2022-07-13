@@ -9,19 +9,44 @@ module Bff
           @active = attr[:active] || false
           @context = attr[:context]
           @children = attr[:children]
+          @exercise_token = attr[:exercise_token]
         end
 
         def render
+          list = nil
+          @is_open = false
+          if @item.item_type == 'fixation_exercise'
+            i = 0
+            @is_open = @active
+            list = @item.active_children.map do |exercise|
+              i += 1
+              exercise_active =  exercise.token == @exercise_token
+              {
+                id: exercise.slug,
+                is_correct: false,
+                is_answered: false,
+                show_answer: false,
+                is_active: exercise_active,
+                title: "Questão #{i.to_s.rjust(2, '0')}",
+                href: "/app/exercicio/#{exercise.token}#{context_sufix}",
+              }
+            end
+          end
+          title = @item.name.gsub(/.* - /, '')
           {
-            title: @item.name,
-            caption: subtitle,
-            link: { href: route },
-            icon: icon,
-            active: @active,
-            icon_color: @active ? "var(--color-info-100)" : "var(--color-background-primary)",
-            circle_color: @active ? "var(--color-info-500)" : "var(--color-text-primary)",
-            children: @children
+            id: @item.slug,
+            title: title,
+            subtitle: subtitle,
+            href: route,
+            icon_name: icon,
+            is_active: @active,
+            is_open: @is_open,
+            list: list
           }
+        end
+
+        def sublist
+
         end
 
         def route

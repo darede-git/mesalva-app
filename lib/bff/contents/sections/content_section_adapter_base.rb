@@ -26,6 +26,7 @@ module Bff
               ] },
             {
               "component": "Grid",
+              "growing": false,
               "columns": {
                 "md": "2fr 1fr"
               },

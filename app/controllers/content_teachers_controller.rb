@@ -5,7 +5,7 @@ class ContentTeachersController < ApplicationController
   before_action :authenticate_permission, except: %i[show]
 
   def index
-    @content_teachers = ContentTeacher.filters(filter_params)
+    @content_teachers = ContentTeacher.ms_filters(filter_params)
                                       .page(page_param)
                                       .per_page(per_page_param)
     render json: serialize(@content_teachers, v: 3), status: :ok

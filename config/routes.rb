@@ -119,12 +119,16 @@ Rails.application.routes.draw do
 
       get 'contents/video/:token', to: 'contents#show_video'
       get 'contents/text/:token', to: 'contents#show_text'
+      get 'contents/essay/:token', to: 'contents#show_essay'
       get 'contents/rating/:token', to: 'contents#show_rating'
+      get 'contents/exercise/:token', to: 'contents#show_exercise'
 
       namespace :events do
         get '/rating/:token', to: 'contents#show_medium_rating'
         post '/rating/:token', to: 'contents#create_medium_rating'
-        post '/exercises/:node_module_token/:item_token/:medium_token', to: 'contents#exercise_answered'
+        post '/exercises/:token', to: 'contents#create_exercise_event'
+        get '/sidebar_events/:token', to: 'contents#index_sidebar_events'
+
         get '/course_classes/:slug(/:page)', to: 'course_classes#index'
         post '/course_classes/:slug(/:page)', to: 'course_classes#create'
         delete '/course_classes/:slug(/:page)', to: 'course_classes#destroy'
@@ -147,10 +151,12 @@ Rails.application.routes.draw do
       get '/pages/exercicio/:slug', to: 'contents#dynamic_content'
       get '/pages/aula/:slug', to: 'contents#dynamic_content'
       get '/pages/video/:slug', to: 'contents#dynamic_content'
+      get '/pages/redacao/:slug', to: 'contents#dynamic_content'
       get '/pages/texto/:slug', to: 'contents#dynamic_content'
       get '/pages/plano-de-estudos', to: 'pages#show_study_plan'
       get '/pages/turmas/:slug', to: 'course_classes#show_course_class'
       get '/pages/turmas/:slug/:page', to: 'course_classes#show_course_class'
+
       get '/pages/*token', to: 'pages#show'
 
       get '/live_classes', to:'live_classes#weekly'
@@ -159,6 +165,9 @@ Rails.application.routes.draw do
     namespace :admin do
       get '/contents/:token', to: 'contents#show'
       put '/contents/:token', to: 'contents#update'
+      delete '/users/:uid', to: 'users#anonymize_user'
+      put '/orders',  to: 'orders#update_price_paid'
+
     end
   end
 

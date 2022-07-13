@@ -12,6 +12,7 @@ class User::MentoringsController < ApplicationController
 
   def set_mentorings
     @mentoring = Mentoring.by_user(current_user)
+                         .active
                          .next_only_filter(next_only?)
                          .order(:starts_at)
                          .page(page_param)

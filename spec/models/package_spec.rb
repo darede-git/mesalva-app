@@ -192,6 +192,22 @@ RSpec.describe Package, type: :model do
                  )).to eq([ios_enem_package])
         end
       end
+
+      context '.full_filters' do
+        context 'with a node' do
+          let!(:node) { create(:node, slug: 'enem-e-vestibulares', node_type: 'education_segment') }
+          context 'with packages' do
+            let!(:package1) { create(:package_valid_with_price, sku: 'enem', education_segment_id: node.id) }
+            let!(:package2) { create(:package_valid_with_price, sku: 'enem', education_segment_slug: node.slug) }
+            context 'with a bookshop gift pacakge' do
+              let!(:bookshop_gift_package) { create(:bookshop_gift_package, package_id: package2.id) }
+              it 'return packages filtered by sku enem ' do
+                expect(Package.full_filters({ sku: 'enem' })).to eq([package1, package2])
+              end
+            end
+          end
+        end
+      end
     end
   end
 

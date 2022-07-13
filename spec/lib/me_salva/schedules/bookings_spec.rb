@@ -43,7 +43,7 @@ RSpec.describe MeSalva::Schedules::Bookings do
               mentorings.each do |mentoring|
                 event = bookings.find { |e| mentoring.simplybook_id == e['id'] }
                 expect(mentoring.title).to eq(event['service']['name'])
-                expect(mentoring.status).to eq(event['status'])
+                expect(mentoring.active).to eq(event['status'] != 'canceled')
                 expect(mentoring.starts_at).to eq(event['start_datetime'])
                 expect(mentoring.user.crm_email).to eq(event['client']['email'])
                 expect(mentoring.content_teacher.email).to eq(event['provider']['email'])

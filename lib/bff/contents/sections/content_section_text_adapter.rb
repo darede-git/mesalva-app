@@ -3,7 +3,7 @@
 module Bff
   module Contents
     module Sections
-      class ContentSectionTextAdapter < ContentSectionAdapterBase
+      class ContentSectionTextAdapter < ConsoleTemplateBase
         def initialize(content, **attr)
           @content = content
           @page_component = 'ConsoleTemplate'

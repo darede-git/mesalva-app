@@ -56,7 +56,7 @@ module MeSalva
 
         data = {
           title: service['name'],
-          status: @booking['status'],
+          active: @booking['status'] != 'canceled',
           user_id: @user.id,
           content_teacher_id: @content_teacher.id,
           comment: service['description'],

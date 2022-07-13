@@ -14,6 +14,6 @@ FactoryBot.define do
 
     description "examplo description"
     content_type "examplo type"
-    email nil
+    email 'some-teacher@email.com'
   end
 end

@@ -35,6 +35,10 @@ module MeSalva
             DELIVERY_METHODS.keys.map(&:to_s)
           end
 
+          def valid_method?(service_type)
+            available_methods.include? service_type
+          end
+
           def api_url(description)
             APIS[description.to_sym]
           end

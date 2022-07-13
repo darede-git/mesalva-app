@@ -68,6 +68,8 @@ class Bff::User::PersonasController < Bff::User::BffUserBaseController
   end
 
   def user_has_med_access?
+    return false if current_user.nil?
+
     current_user.accesses.any? do |access|
       access.package.label.include?('medicina-2022-1')
     end

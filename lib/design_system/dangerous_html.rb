@@ -6,11 +6,12 @@ module DesignSystem
     FIELDS = {
       size: DEFAULT_SIZES,
       html: :string,
+      as: :string,
       children: :any,
     }
 
     def self.html(html)
-      self.render(html: html)
+      self.render(html: html, as: 'div')
     end
   end
 end

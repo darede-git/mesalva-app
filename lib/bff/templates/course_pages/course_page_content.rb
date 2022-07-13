@@ -299,7 +299,7 @@ module Bff
         end
 
         def main_section
-          return empty_page(@summary['releasePage']) if page_number < 0
+          return empty_page(@summary['releasePage']) if page_number <= 0
           return empty_page(@summary['emptyPage']) if @page.nil?
 
           {

@@ -13,7 +13,7 @@ class Medium < ActiveRecord::Base
                      fixation_exercise video pdf essay public_document
                      soundcloud typeform book essay_video correction_video].freeze
 
-  EXERCISE_LIMIT_BYTE_SIZE = 8500
+  EXERCISE_LIMIT_BYTE_SIZE = 24000
 
   validates :name, :medium_type, presence: true, allow_blank: false
 

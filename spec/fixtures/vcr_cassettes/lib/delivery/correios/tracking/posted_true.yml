@@ -1,0 +1,49 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://apps3.correios.com.br/areletronico/v1/ars/eventos
+    body:
+      encoding: UTF-8
+      string: '{ "objetos": ["AB123456789BR"] }'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Basic MTY3MzMyNjgwMDAxNzI6bWVzYWx2YTIwMTM=
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Apache-Coyote/1.1
+      Access-Control-Allow-Origin:
+      - https://cws.correios.com.br
+      Access-Control-Allow-Methods:
+      - GET, POST, DELETE, PUT, OPTIONS
+      Access-Control-Allow-Headers:
+      - Origin, X-Requested-With, Content-Type, Accept, Content-Type, api_key, Authorization
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Date:
+      - Sun, 03 Jul 2022 23:25:51 GMT
+      X-Cnection:
+      - close
+      Set-Cookie:
+      - BIGipServerpool_areletronico=979044362.55103.0000; path=/; Httponly; Secure
+      - BIGipServerpool_kubernetes2_443=4233758730.38527.0000; path=/; Httponly; Secure
+      - internet=701038602.47873.0000; path=/; Httponly; Secure
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload;
+    body:
+      encoding: UTF-8
+      string: '[{"codigo":"AB123456789BR","mensagem":"Objeto
+        Encontrado","eventos":[{"tipoEvento":"BDE","descricaoEvento":"Entregue","nomeUnidade":"unit_name","municipio":"city_name","uf":"UF","latitude":"-1,11111111111111","longitude":"1,11111111111111","dataEvento":"02/01/2022 08:00:00"},{"tipoEvento":"OEC","descricaoEvento":"Saiu para entrega ao destinatário","nomeUnidade":"unit_name","municipio":"city_name","uf":"UF","latitude":"","longitude":"","dataEvento":"02/01/2022 07:00:00"},{"tipoEvento":"DO","descricaoEvento":"Objeto expedido","nomeUnidade":"unit_name","municipio":"city_name","uf":"UF","latitude":"","longitude":"","dataEvento":"01/01/2022 15:00:00"},{"tipoEvento":"DO","descricaoEvento":"Objeto expedido","nomeUnidade":"unit_name","municipio":"city_name","uf":"UF","latitude":"","longitude":"","dataEvento":"01/01/2022 16:00:00"},{"tipoEvento":"DO","descricaoEvento":"Objeto expedido","nomeUnidade":"unit_name","municipio":"city_name","uf":"UF","latitude":"","longitude":"","dataEvento":"01/01/2022 17:00:00"},{"tipoEvento":"PO","descricaoEvento":"Postado","nomeUnidade":"unit_name","municipio":"city_name","uf":"UF","latitude":"","longitude":"","dataEvento":"01/01/2022 07:00:00"}],"tipo":"Comprovante Eletrônico"}]'
+    http_version: 
+  recorded_at: Sun, 03 Jul 2022 23:25:49 GMT
+recorded_with: VCR 5.0.0

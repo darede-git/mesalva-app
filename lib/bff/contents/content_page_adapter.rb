@@ -19,6 +19,7 @@ module Bff
         item_streaming: Sections::ContentSectionStreamingAdapter,
         item_fixation_exercise: Sections::ContentSectionExerciseListAdapter,
         item_text: Sections::ContentSectionTextAdapter,
+        item_essay: Sections::ContentSectionEssayAdapter,
 
         medium_fixation_exercise: Sections::ContentSectionExerciseItemAdapter,
       }.freeze

@@ -63,9 +63,14 @@ class Order < ActiveRecord::Base
   scope :pending, -> { where(status: STATUS[:pending]) }
   scope :by_iugu, -> { where(broker: Brokers::IUGU) }
   scope :by_play_store, -> { where(broker: Brokers::PLAY_STORE) }
+  scope :by_asaas, -> { where(broker: Brokers::ASAAS) }
 
   scope :expired_pending, lambda {
     where("created_at <  ?", expire_date).pending
+  }
+
+  scope :by_token, lambda { |token|
+    where(token: token).first
   }
 
   scope :pending_order_subscriptions, lambda {

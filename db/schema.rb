@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_22_153341) do
+ActiveRecord::Schema.define(version: 2022_06_29_185835) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "hstore"
@@ -47,7 +47,6 @@ ActiveRecord::Schema.define(version: 2022_06_22_153341) do
     t.integer "essay_credits"
     t.bigint "platform_id"
     t.integer "private_class_credits", default: 0
-    t.integer "mentoring_cred"
     t.index ["active"], name: "index_accesses_on_active"
     t.index ["expires_at"], name: "index_accesses_on_expires_at"
     t.index ["order_id"], name: "index_accesses_on_order_id"
@@ -705,7 +704,6 @@ ActiveRecord::Schema.define(version: 2022_06_22_153341) do
 
   create_table "mentorings", force: :cascade do |t|
     t.string "title"
-    t.string "status"
     t.bigint "user_id"
     t.bigint "content_teacher_id"
     t.text "comment"
@@ -713,6 +711,8 @@ ActiveRecord::Schema.define(version: 2022_06_22_153341) do
     t.datetime "starts_at"
     t.integer "simplybook_id"
     t.string "call_link"
+    t.string "category", default: "mentoring"
+    t.boolean "active", default: true
     t.index ["content_teacher_id"], name: "index_mentorings_on_content_teacher_id"
     t.index ["user_id"], name: "index_mentorings_on_user_id"
   end
@@ -998,7 +998,6 @@ ActiveRecord::Schema.define(version: 2022_06_22_153341) do
     t.integer "private_class_credits", default: 0
     t.bigint "tangible_product_id"
     t.float "tangible_product_discount_percent"
-    t.integer "mentoring_cred"
     t.index ["education_segment_slug"], name: "index_packages_on_education_segment_slug"
     t.index ["slug"], name: "index_packages_on_slug", unique: true
     t.index ["tangible_product_id"], name: "index_packages_on_tangible_product_id"
